@@ -46,13 +46,16 @@ function rot13(str) {
 }
 console.log(rot13("Depression"))
 ```
-```ad-info
-collapse:true
-- `str.replace(/[a-z]/ig, f(x))`
-	- RegularExpression [a-z] takes all the alphabets, not case sensitive and replaces is it according to f(x)
-- `return String.fromCharCode(x.charCodeAt(0) + (x.toLowerCase() <= 'm' ? 13: -13));
+
+> [!info]-
+> 
+> `str.replace(/[a-z]/ig, f(x))` 
+> - Regular Expression [a-z] takes all the alphabets, not case sensitive and replaces is it according to f(x)
+>   
+>`return String.fromCharCode(x.charCodeAt(0) + (x.toLowerCase() <= 'm' ? 13: -13));
   });`
-	- Returns the Char + 13 if alphabet is smaller then m, or Char - 13 if alphabet is larger then 'm'; As Unicode characters are consecutive, it works for capitalised and non capitalised!
-```
+> - Returns the Char + 13 if alphabet is smaller then m, or Char - 13 if alphabet is larger then 'm'; As Unicode characters are consecutive, it works for capitalised and non capitalised!
+
+
 
 
