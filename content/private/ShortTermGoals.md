@@ -8,12 +8,12 @@ kanban-plugin: basic
 
 - [ ] Make Article about SSH into Github
 - [ ] Make Article about Hugo Obsidian
-- [ ] Obsidian as a programmer
 
 
 ## # DONE
 
 **Complete**
+- [x] Obsidian as a programmer
 
 
 
