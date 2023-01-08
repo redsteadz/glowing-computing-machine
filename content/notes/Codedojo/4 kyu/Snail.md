@@ -1,5 +1,5 @@
 ---
-title: "4 kyu"
+title: "Snail"
 ---
 
 
@@ -29,3 +29,5 @@ This image will illustrate things more clearly:
 NOTE: The idea is not sort the elements from the lowest value to the highest; the idea is to traverse the 2-d array in a clockwise snailshell pattern.
 
 NOTE 2: The 0x0 (empty matrix) is represented as en empty array inside an array `[[]]`.
+![](notes/Codedojo/4%20kyu/attachments/Snail%202023-01-09%2001.44.43.excalidraw.svg)
+%%[🖋 Edit in Excalidraw](notes/Codedojo/4%20kyu/attachments/Snail%202023-01-09%2001.44.43.excalidraw.md), and the [dark exported image](notes/Codedojo/4%20kyu/attachments/Snail%202023-01-09%2001.44.43.excalidraw.dark.svg)%%
