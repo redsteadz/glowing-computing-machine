@@ -31,7 +31,7 @@ NOTE: The idea is not sort the elements from the lowest value to the highest; th
 NOTE 2: The 0x0 (empty matrix) is represented as en empty array inside an array `[[]]`.
 
 ## My solution
-```run-javascript
+```javascript
 snail = function(array) {
     // enjoy
     let arr = array
