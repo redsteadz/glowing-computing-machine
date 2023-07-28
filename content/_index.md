@@ -10,8 +10,8 @@ banner: "![[minimal-japan-wallpaper.jpg]]"
 >[!multi-column]
 >>[!blank-container]
 >>## 🏠  Navigation
->>[001.  ReactJS](notes/ReactJS/001.%20%20ReactJS.md)
->>[001.  Rust](notes/Rust/001.%20%20Rust.md)
+>>[001.  ReactJS](notes/3.ReactJS/001.%20%20ReactJS.md)
+>>[001.  Rust](notes/4.Rust/001.%20%20Rust.md)
 > 
 >>[!blank-container]
 >>## 🧭 Projects 
