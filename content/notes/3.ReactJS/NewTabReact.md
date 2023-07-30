@@ -16,7 +16,7 @@ LIKE
 
 ## The Design
 
-![Safari • Dark Mode ON 1](notes/3.ReactJS/attachments/Safari%20•%20Dark%20Mode%20ON%201.png)
+![Safari • Dark Mode ON 1](notes/3.ReactJS/attachments/Safari_dark_mode.png)
 
 
 ## Simple Features
