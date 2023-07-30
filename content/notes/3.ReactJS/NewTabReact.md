@@ -15,7 +15,9 @@ LIKE
 - [mue](https://github.com/mue/mue)
 
 ## The Design
+
 ![[notes/3.ReactJS/attachments/Safari • Dark Mode ON 1.png]]
+
 ## Simple Features
 - AutoScrapped Quotes
 - Weather
