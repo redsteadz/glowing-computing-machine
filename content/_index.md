@@ -21,12 +21,15 @@ enableToc: false
 
 
 <h1 align="center"> Tasks </h2>
+
 ```dataview
 task from #task 
 ```
+
 ---
 
 <h1 align="center">Journal</h1>
+
 ```dataview
 table date
 from #daily 
