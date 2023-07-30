@@ -7,11 +7,16 @@ enableToc: false
 
 <h1 align="center"> Navigation </h1>
 
+<nav style="display:flex; justify-content:space-evenly;"> 
+
 ## [[notes/3.ReactJS/001.  ReactJS|001.  ReactJS]]
 
 ## [[notes/4.Rust/001.  Rust|001.  Rust]]
 
 ## [[notes/2.CodeWars/001.   CodeWars|001.   CodeWars]]
+
+</nav>
+
 
 
 
