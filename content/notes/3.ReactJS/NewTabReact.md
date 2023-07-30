@@ -159,7 +159,8 @@ To implement an updating clock in React, you can follow these steps:
 
 4. Finally, you can render the `Clock` component in your main app component or any other component where you want to display the clock.
 
-   ```jsx
+
+```jsx
    import React from "react";
    import Clock from "./Clock";
 
@@ -177,7 +178,7 @@ To implement an updating clock in React, you can follow these steps:
 
 With these steps, the clock component will update the displayed time every second while using React's state and hooks.
 
-### The use-effect
+### The [[notes/3.ReactJS/Fundamentals/useEffect|useEffect]]
 The `useEffect` hook is a built-in hook in React that allows you to perform side effects in functional components. Side effects are any code that needs to be executed outside the normal flow of the component, such as fetching data, subscribing to events, or manually modifying the DOM.
 
 The `useEffect` hook takes two parameters: a callback function and an optional dependency array. The callback function is executed after the component renders, and it can return a cleanup function that will be executed before the component is unmounted or re-rendered. The dependency array specifies the values that the effect depends on, and it allows you to control when the effect should run or be skipped.
@@ -209,6 +210,6 @@ function MyComponent() {
 
 In this example, the effect will run only once, immediately after the component renders for the first time, because the dependency array is empty. If you specify a dependency array with values, the effect will run whenever any of those values change.
 
-`useEffect` is a powerful tool for managing side effects in functional components and helps to keep the logic of the component organized and easy to understand.
+[[notes/3.ReactJS/Fundamentals/useEffect|useEffect]] is a powerful tool for managing side effects in functional components and helps to keep the logic of the component organized and easy to understand.
 
 - [ ] Hook QOTD and Weather API to [[notes/3.ReactJS/NewTabReact|NewTabReact]] #task
