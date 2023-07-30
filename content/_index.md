@@ -1,23 +1,19 @@
 ---
 title: RedSteadz Home Blog
 enableToc: false
-banner_y: 0.23685
-banner: "![[minimal-japan-wallpaper.jpg]]"
----
 ---
 
-[Home](_index.md) 
->[!multi-column]
->>[!blank-container]
->>## 🏠  Navigation
->>[[notes/3.ReactJS/001.  ReactJS|001.  ReactJS]]
->>[[notes/4.Rust/001.  Rust|001.  Rust]]
-> 
->>[!blank-container]
->>## 🧭 Projects 
->> ```dataview
->> list from #projects 
->>```
+
+
+<h1 align="center"> Navigation </h1>
+
+## [[notes/3.ReactJS/001.  ReactJS|001.  ReactJS]]
+
+## [[notes/4.Rust/001.  Rust|001.  Rust]]
+
+## [[notes/2.CodeWars/001.   CodeWars|001.   CodeWars]]
+
+
 
 <h1 align="center"> Tasks </h2>
 ```dataview

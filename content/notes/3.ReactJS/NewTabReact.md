@@ -208,3 +208,4 @@ In this example, the effect will run only once, immediately after the component 
 
 `useEffect` is a powerful tool for managing side effects in functional components and helps to keep the logic of the component organized and easy to understand.
 
+- [ ] Hook QOTD and Weather API to [[notes/3.ReactJS/NewTabReact|NewTabReact]] #task
