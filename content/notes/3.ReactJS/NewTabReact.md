@@ -212,4 +212,80 @@ In this example, the effect will run only once, immediately after the component 
 
 [[notes/3.ReactJS/Fundamentals/useEffect|useEffect]] is a powerful tool for managing side effects in functional components and helps to keep the logic of the component organized and easy to understand.
 
-- [ ] Hook QOTD and Weather API to [[notes/3.ReactJS/NewTabReact|NewTabReact]] #task
+
+
+![[notes/3.ReactJS/attachments/Pasted image 20230731164437.png]]
+
+*The actual progress is a bit different due to the different styles give to this !*
+
+## Hooking up [[notes/3.ReactJS/Fundamentals/API|API]]
+- [x] Hook QOTD and Weather API to [[notes/3.ReactJS/NewTabReact|NewTabReact]] #task  [completion:: 2023-07-31]
+Now that we have the overall structure built, We can start to implement the API that take the data from the respective API of 
+- [Quotable](https://github.com/lukePeavey/quotable)
+- [OpenWeather](https://openweathermap.org/api)
+The general code for getting the JSON from an API is;
+```js {title='Fetching API using JS'} #snippet 
+    const url = "API url"
+    
+    const [data, setData] = useState(["List/Data set with default data to prevent errors"]);
+    async function fetchInfo(){ 
+        const res = await fetch(url);
+        const d = await res.json();
+        return setData(d); 
+        }
+    useEffect(()=>{
+        fetchInfo();
+    }, [])
+```
+
+The interesting this that Javascript is an async language, the thing doesn't wait for one code to execute and goes on to the next, Meaning calling to retreive the data through
+
+```jsx
+<h1 className='qotd base'>  {data[0]["content"]}  <br></br>  <span className='author'> {data[0]["author"]} </span> </h1>
+```
+
+It would give an error if it weren't for the default values of data that we gave in the `useState`
+
+## BottomSection
+Just a list of links for ease of use the JSX and CSS of which are;
+
+In order to get the icons, using [[notes/3.ReactJS/Fundamentals/react-icons|react-icons]] was a blessing !
+
+
+```jsx
+function Links(){
+    return (
+        <div className='link_section'>
+            <div classname='link_box1'>
+                <ul className='link_list'>
+                    <span className='icon'><MdSportsEsports size={"3em"}/></span>
+                    <li className='link_item'><a className='links' href=""> YouTube </a></li>
+                    <li className='link_item'><a className='links' href=""> Netflix </a></li>
+                    <li className='link_item'><a className='links' href=""> DopeBox </a></li>
+                    <li className='link_item'><a className='links' href=""> 9anime </a></li>
+                </ul>
+            </div>
+            <div classname='link_box2'>
+                <ul className='link_list'>
+                    <span className='icon'><BsFillGearFill size={"3em"}/></span>
+                    <li className='link_item'><a className='links' href=""> links! </a></li>
+                    <li className='link_item'><a className='links' href=""> links! </a></li>
+                    <li className='link_item'><a className='links' href=""> links! </a></li>
+                    <li className='link_item'><a className='links' href=""> links! </a></li>
+                </ul>
+            </div>
+        </div>
+    )
+}
+```
+
+## Result;
+
+![[notes/3.ReactJS/attachments/screencapture-localhost-3000-2023-08-01-02_27_15.png]]
+
+- [ ] Transform this into loops by thaking data from a list #task 
+
+## THIS SITE IS ABSOLUTE TRASH AS IT IS NOT RESPONSIVE!!!
+
+- [ ] Make [[notes/3.ReactJS/NewTabReact|NewTabReact]] Responsive #task 
+Learn it if you need to !
