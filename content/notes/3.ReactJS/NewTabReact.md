@@ -282,7 +282,7 @@ function Links(){
 
 ## Result;
 
-![[notes/3.ReactJS/attachments/screencapture-localhost-3000-2023-08-01-02_27_15.png]]
+![](notes/3.ReactJS/attachments/screencapture-localhost-3000-2023-08-01-02_27_15.png)
 
 - [ ] Transform this into loops by taking data from a list of links #task 
 
@@ -346,5 +346,5 @@ The whole idea about making a "responsive" design was to hook up values window s
 
 # Finale
 
-![[notes/3.ReactJS/attachments/screencapture-localhost-3000-2023-08-01-19_12_41.png]]
+![](notes/3.ReactJS/attachments/screencapture-localhost-3000-2023-08-01-19_12_41.png)
 
