@@ -214,7 +214,7 @@ In this example, the effect will run only once, immediately after the component 
 
 
 
-![[notes/3.ReactJS/attachments/Pasted image 20230731164437.png]]
+![](notes/3.ReactJS/attachments/Pasted%20image%2020230731164437.png)
 
 *The actual progress is a bit different due to the different styles give to this !*
 
