@@ -283,9 +283,67 @@ function Links(){
 
 ![[notes/3.ReactJS/attachments/screencapture-localhost-3000-2023-08-01-02_27_15.png]]
 
-- [ ] Transform this into loops by thaking data from a list #task 
+- [ ] Transform this into loops by taking data from a list of links #task 
+
+## Adding a GitHubCalendar 
+[Reference](https://grubersjoe.github.io/react-github-calendar/)
+[Activity-Calendar](https://grubersjoe.github.io/react-activity-calendar/?path=/docs/react-activity-calendar--docs)
+
+So first we just need to install the component so that we can import it
+
+```bash
+npm install react-github-calendar
+```
+
+Then add it to your respective Application
+
+```js {title:"./App.js"}
+import GitHubCalendar from 'react-github-calendar'
+
+function App(){
+	return(// You apps
+		<GitHubCalendar username='USERNAME' blockSize={24} style={{fontFamily:'Montserrat', margin:'3vh', fontWeight:'600', borderColor:'white'}} theme={colourTheme} transformData={Filter}/>
+	)
+}
+```
+
+This function gives an entire graph for the whole year, but this can be changed by using filtering and `transformData`
+
+### Filtering the last 6 months
+
+```js
+const selectLastHalfYear = contributions => {
+  const currentYear = new Date().getFullYear();
+  const currentMonth = new Date().getMonth();
+  const shownMonths = 6;
+
+  return contributions.filter(activity => {
+    const date = new Date(activity.date);
+    const monthOfDay = date.getMonth();
+
+    return (
+      date.getFullYear() === currentYear &&
+      monthOfDay > currentMonth - shownMonths &&
+      monthOfDay <= currentMonth
+    );
+  });
+};
+```
+
+`transformData={}` runs a function on an array of data (contributions), then we can have a constant for the current year and month. Using this data we can filter it out
+
+`filter()` is a function which runs over the items of the data returning the satisfied data. Then checks if
+- The year of data === This year
+- monthofData is greater than the previous **6** months
+- monthofData is less than or the same as the currentMonth
 
 ## THIS SITE IS ABSOLUTE TRASH AS IT IS NOT RESPONSIVE!!!
 
-- [ ] Make [[notes/3.ReactJS/NewTabReact|NewTabReact]] Responsive #task 
+- [x] Make [[notes/3.ReactJS/NewTabReact|NewTabReact]] Responsive #task  [completion:: 2023-08-01]
 Learn it if you need to !
+The whole idea about making a "responsive" design was to hook up values window size to the scale of the components [[notes/3.ReactJS/Fundamentals/(HTML-CSS) - Measurement values|(HTML-CSS) - Measurement values]]
+
+# Finale
+
+![[notes/3.ReactJS/attachments/screencapture-localhost-3000-2023-08-01-19_12_41.png]]
+
