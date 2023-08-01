@@ -157,6 +157,7 @@ To implement an updating clock in React, you can follow these steps:
    export default Clock;
 ```
 
+
 4. Finally, you can render the `Clock` component in your main app component or any other component where you want to display the clock.
 
 
@@ -341,6 +342,7 @@ const selectLastHalfYear = contributions => {
 ## THIS SITE IS ABSOLUTE TRASH AS IT IS NOT RESPONSIVE!!!
 
 - [x] Make [[notes/3.ReactJS/NewTabReact|NewTabReact]] Responsive #task  [completion:: 2023-08-01]
+
 Learn it if you need to !
 The whole idea about making a "responsive" design was to hook up values window size to the scale of the components [[notes/3.ReactJS/Fundamentals/Measurement values|Measurement values]]
 
