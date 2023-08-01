@@ -218,13 +218,14 @@ In this example, the effect will run only once, immediately after the component 
 
 *The actual progress is a bit different due to the different styles give to this !*
 
-## Hooking up [[notes/3.ReactJS/Fundamentals/API|API]]
+## Hooking up [[notes/3.ReactJS/Fundamentals/api|api]]
 - [x] Hook QOTD and Weather API to [[notes/3.ReactJS/NewTabReact|NewTabReact]] #task  [completion:: 2023-07-31]
 Now that we have the overall structure built, We can start to implement the API that take the data from the respective API of 
 - [Quotable](https://github.com/lukePeavey/quotable)
 - [OpenWeather](https://openweathermap.org/api)
-The general code for getting the JSON from an API is;
-```js {title='Fetching API using JS'} #snippet 
+The general code for getting the JSON from an API is; #snippet 
+
+```js  
     const url = "API url"
     
     const [data, setData] = useState(["List/Data set with default data to prevent errors"]);
@@ -297,7 +298,7 @@ npm install react-github-calendar
 
 Then add it to your respective Application
 
-```js {title:"./App.js"}
+```js 
 import GitHubCalendar from 'react-github-calendar'
 
 function App(){
