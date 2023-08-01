@@ -341,7 +341,7 @@ const selectLastHalfYear = contributions => {
 
 - [x] Make [[notes/3.ReactJS/NewTabReact|NewTabReact]] Responsive #task  [completion:: 2023-08-01]
 Learn it if you need to !
-The whole idea about making a "responsive" design was to hook up values window size to the scale of the components [[notes/3.ReactJS/Fundamentals/(HTML-CSS) - Measurement values|(HTML-CSS) - Measurement values]]
+The whole idea about making a "responsive" design was to hook up values window size to the scale of the components [[notes/3.ReactJS/Fundamentals/Measurement values|Measurement values]]
 
 # Finale
 
