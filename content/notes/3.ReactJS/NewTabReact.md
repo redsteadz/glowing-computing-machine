@@ -30,7 +30,7 @@ LIKE
 
 ## Make the Basic Structure of the App
 
-## NavBar
+### NavBar
 This one is actually oddly simple, as the basic structure of the navbar is only based on GoogleSearch being hooked too the input, some border style and we are done
 
 ```js
@@ -73,7 +73,7 @@ CSS
 ![](notes/3.ReactJS/attachments/Peek%202023-07-27%2018-24.gif)
 
 
-## Input entry to Google search
+### Input entry to Google search
 Simple HTML was just applied !
 ```html
  <form action="http://www.google.com/search" method="get">
@@ -109,13 +109,12 @@ In the example below, the form data is sent to a file called "action_page.php". 
 
 - [ ] Make the search icon an object instead of background #task 
 
-## Making a theme generated background paper
+### Making a theme generated background paper
 Not possible ?
 Found [BGJar](https://bgjar.com/) to for really nice background patterns!
 
-# Implementing a Working clock
-
-## An Updating Clock and "useEffect" - ChatGPT
+### Implementing a Working clock
+#### An Updating Clock and "useEffect" - ChatGPT
 
 To implement an updating clock in React, you can follow these steps:
 1. Create a new React component for the clock. For example, you can name it "Clock".
@@ -155,7 +154,7 @@ To implement an updating clock in React, you can follow these steps:
    };
 
    export default Clock;
-```
+   ```
 
 
 4. Finally, you can render the `Clock` component in your main app component or any other component where you want to display the clock.
@@ -339,7 +338,7 @@ const selectLastHalfYear = contributions => {
 - monthofData is greater than the previous **6** months
 - monthofData is less than or the same as the currentMonth
 
-## THIS SITE IS ABSOLUTE TRASH AS IT IS NOT RESPONSIVE!!!
+### [[notes/3.ReactJS/Fundamentals/Responsive_Design|Responsive_Design]]
 
 - [x] Make [[notes/3.ReactJS/NewTabReact|NewTabReact]] Responsive #task  [completion:: 2023-08-01]
 
