@@ -284,7 +284,7 @@ function Links(){
 
 ![](notes/3.ReactJS/attachments/screencapture-localhost-3000-2023-08-01-02_27_15.png)
 
-- [ ] Transform this into loops by taking data from a list of links #task 
+- [x] Transform this into loops by taking data from a list of links #task  [completion:: 2023-08-04]
 
 ## Adding a GitHubCalendar 
 [Reference](https://grubersjoe.github.io/react-github-calendar/)
@@ -349,3 +349,28 @@ The whole idea about making a "responsive" design was to hook up values window s
 
 ![](notes/3.ReactJS/attachments/screencapture-localhost-3000-2023-08-01-19_12_41.png)
 
+
+## Implementing the Loop for links
+We can go over the key values of an object by 
+```js
+const link1 = [{
+        name:"YouTube" ,
+        link:"https://youtube.com/"
+    },{
+        name:"DopeBox" ,
+        link:"https://dopebox.to/"
+    },{
+        name:"Netflix" ,
+        link:"https://netflix.com/"
+    },{
+        name:"9anime" ,
+        link:"https://netflix.com/"
+    },]
+
+  let Link1 = linkList1.map((obj)=>{
+        return (<li className='link_item'><button className='links' onClick={()=>{window.open(obj.link)}}> {obj.name} </button></li>)
+    })
+```
+
+- [ ] Fixing the App for best practices!
+[[Reacts Best Practice]]
