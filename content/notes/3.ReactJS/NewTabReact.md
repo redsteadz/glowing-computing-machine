@@ -380,12 +380,12 @@ Definitely need to learn how to properly, easily make responsive design.. Maybe 
 ## Done
 - [x] Make [[notes/3.ReactJS/NewTabReact|NewTabReact]] Responsive #task  [completion:: 2023-08-01]
 - [x] Transform this into loops by taking data from a list of links #task  [completion:: 2023-08-04]
-- [x] Hook QOTD and Weather API to [[notes/3.ReactJS/NewTabReact|NewTabReact]] #task  [completion:: 2023-07-31]
-## Problems
-- [ ] The mobile UI is bad! need to fix it #task 
-- [ ] Fixing the App for best practices! #task
-- [ ] Make the search icon an object instead of background #task 
-- [ ] A safe and easy way to import API keys to the public repo
+- [x]  QOTD and Weather API to [[notes/3.ReactJS/NewTabReact|NewTabReact]] #task  [completion:: 2023-07-31]
+- [x] A safe and easy way to import API keys to the public repo
 	- [Using .env in gh-pages](https://stackoverflow.com/questions/53648652/how-to-use-environment-variables-in-github-page)
 	- [dotenv React](https://www.smashingmagazine.com/2023/05/safest-way-hide-api-keys-react/)
+- [x] The mobile UI is bad! need to fix it #task
+- [x] Make the search icon an object instead of background #task  [completion:: 2023-08-06]
 
+## Problems
+- [ ] Fixing the App for best practices! #task
