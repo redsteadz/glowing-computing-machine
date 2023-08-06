@@ -107,7 +107,6 @@ In the example below, the form data is sent to a file called "action_page.php". 
 ![](notes/3.ReactJS/attachments/NewTabReact%202023-07-27%2018.36.48.excalidraw.svg)
 %%[🖋 Edit in Excalidraw](notes/3.ReactJS/attachments/NewTabReact%202023-07-27%2018.36.48.excalidraw.md), and the [dark exported image](notes/ReactJS/attachments/NewTabReact%202023-07-27%2018.36.48.excalidraw.dark.svg)%%
 
-- [ ] Make the search icon an object instead of background #task 
 
 ### Making a theme generated background paper
 Not possible ?
@@ -219,7 +218,6 @@ In this example, the effect will run only once, immediately after the component 
 *The actual progress is a bit different due to the different styles give to this !*
 
 ## Hooking up [[notes/3.ReactJS/Fundamentals/api|api]]
-- [x] Hook QOTD and Weather API to [[notes/3.ReactJS/NewTabReact|NewTabReact]] #task  [completion:: 2023-07-31]
 Now that we have the overall structure built, We can start to implement the API that take the data from the respective API of 
 - [Quotable](https://github.com/lukePeavey/quotable)
 - [OpenWeather](https://openweathermap.org/api)
@@ -284,7 +282,6 @@ function Links(){
 
 ![](notes/3.ReactJS/attachments/screencapture-localhost-3000-2023-08-01-02_27_15.png)
 
-- [x] Transform this into loops by taking data from a list of links #task  [completion:: 2023-08-04]
 
 ## Adding a GitHubCalendar 
 [Reference](https://grubersjoe.github.io/react-github-calendar/)
@@ -340,7 +337,6 @@ const selectLastHalfYear = contributions => {
 
 ### [[notes/3.ReactJS/Fundamentals/Responsive_Design|Responsive_Design]]
 
-- [x] Make [[notes/3.ReactJS/NewTabReact|NewTabReact]] Responsive #task  [completion:: 2023-08-01]
 
 Learn it if you need to !
 The whole idea about making a "responsive" design was to hook up values window size to the scale of the components [[notes/3.ReactJS/Fundamentals/Measurement values|Measurement values]]
@@ -372,5 +368,24 @@ const link1 = [{
     })
 ```
 
-- [ ] Fixing the App for best practices!
 [[Reacts Best Practice]]
+
+# Deployment
+Simply followed this incredible guide! 
+[react-gh-pages](https://github.com/gitname/react-gh-pages)
+
+Definitely need to learn how to properly, easily make responsive design.. Maybe by using a framework?
+
+# Task Board
+## Done
+- [x] Make [[notes/3.ReactJS/NewTabReact|NewTabReact]] Responsive #task  [completion:: 2023-08-01]
+- [x] Transform this into loops by taking data from a list of links #task  [completion:: 2023-08-04]
+- [x] Hook QOTD and Weather API to [[notes/3.ReactJS/NewTabReact|NewTabReact]] #task  [completion:: 2023-07-31]
+## Problems
+- [ ] The mobile UI is bad! need to fix it #task 
+- [ ] Fixing the App for best practices! #task
+- [ ] Make the search icon an object instead of background #task 
+- [ ] A safe and easy way to import API keys to the public repo
+	- [Using .env in gh-pages](https://stackoverflow.com/questions/53648652/how-to-use-environment-variables-in-github-page)
+	- [dotenv React](https://www.smashingmagazine.com/2023/05/safest-way-hide-api-keys-react/)
+
