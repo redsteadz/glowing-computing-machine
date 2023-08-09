@@ -70,8 +70,8 @@ console.log(snail([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16,
 ```
 
 
-![](notes/2.CodeWars/4%20kyu/attachments/Snail%202023-01-13%2000.53.26.excalidraw.svg)
-%%[🖋 Edit in Excalidraw](notes/2.CodeWars/4%20kyu/attachments/Snail%202023-01-13%2000.53.26.excalidraw.md), and the [dark exported image](notes/Codedojo/4%20kyu/attachments/Snail%202023-01-13%2000.53.26.excalidraw.dark.svg)%%
+![](notes/2.CodeQ/4%20kyu/attachments/Snail%202023-01-13%2000.53.26.excalidraw.svg)
+%%[🖋 Edit in Excalidraw](notes/2.CodeQ/4%20kyu/attachments/Snail%202023-01-13%2000.53.26.excalidraw.md), and the [dark exported image](notes/Codedojo/4%20kyu/attachments/Snail%202023-01-13%2000.53.26.excalidraw.dark.svg)%%
 ## Algorithm
 Snail = Top + Right + Bottom.reversed() + Left - Repeat till Array is empty
 
@@ -101,8 +101,8 @@ Lets look at this step by step
 	- The array.shift() method "shifts" the first value and returns it
 	- We are taking this value and "unshifting" it the first value of Column left
  This can be illustrated in a diagram like so
-![](notes/2.CodeWars/4%20kyu/attachments/Snail%202023-01-13%2017.46.07.excalidraw.svg)
-%%[🖋 Edit in Excalidraw](notes/2.CodeWars/4%20kyu/attachments/Snail%202023-01-13%2017.46.07.excalidraw.md), and the [dark exported image](notes/Codedojo/4%20kyu/attachments/Snail%202023-01-13%2017.46.07.excalidraw.dark.svg)%%
+![](notes/2.CodeQ/4%20kyu/attachments/Snail%202023-01-13%2017.46.07.excalidraw.svg)
+%%[🖋 Edit in Excalidraw](notes/2.CodeQ/4%20kyu/attachments/Snail%202023-01-13%2017.46.07.excalidraw.md), and the [dark exported image](notes/Codedojo/4%20kyu/attachments/Snail%202023-01-13%2017.46.07.excalidraw.dark.svg)%%
  Now we have left and right columns in an array cl and cr
  Now it's easy!
 ```javascript

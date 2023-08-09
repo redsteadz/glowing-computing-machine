@@ -13,7 +13,7 @@ enableToc: false
 
 ## [[notes/4.Rust/001.  Rust|001.  Rust]]
 
-## [[notes/2.CodeWars/001.   CodeWars|001.   CodeWars]]
+## [[notes/2.CodeQ/001.   CodeWars|001.   CodeWars]]
 
 </nav>
 
