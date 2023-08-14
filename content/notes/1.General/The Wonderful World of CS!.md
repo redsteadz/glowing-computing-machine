@@ -1,5 +1,6 @@
 ---
 title: "The Wonderful World of CS!"
+date: "2023-07-10"
 tags:
 - awesome_list
 - general

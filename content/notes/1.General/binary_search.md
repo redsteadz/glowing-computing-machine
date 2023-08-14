@@ -1,10 +1,12 @@
 ---
 title: "Binary Search"
 description: "The binary search algorithm it's understanding and some of it's application"
+date: "2023-08-11"
 tags:
 - fundamental
 - binary_search
 - algorithm
+- general
 ---
 
 ## Description 
