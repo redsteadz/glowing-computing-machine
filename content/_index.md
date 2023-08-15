@@ -24,6 +24,7 @@ enableToc: false
 
 ```dataview
 task from #task 
+WHERE !completed
 ```
 
 ---
