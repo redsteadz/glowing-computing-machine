@@ -15,6 +15,7 @@ enableToc: false
 
 ## [[notes/2.CodeQ/001.   CodeWars|001.   CodeWars]]
 
+## [[notes/1.General/001.General|001.General]]
 </nav>
 
 
