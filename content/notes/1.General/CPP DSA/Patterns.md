@@ -208,3 +208,29 @@ int main(){
 	return 0;
 }
 ```
+
+![](notes/1.General/CPP%20DSA/attachments/Patterns%202023-08-23%2010.31.39.excalidraw.svg)
+%%[🖋 Edit in Excalidraw](notes/1.General/CPP%20DSA/attachments/Patterns%202023-08-23%2010.31.39.excalidraw.md), and the [dark exported image](notes/1.General/CPP%20DSA/attachments/Patterns%202023-08-23%2010.31.39.excalidraw.dark.svg)%%
+
+```cpp
+int main() {
+  int n;
+//  char ch = 65;
+  int i = 1;
+  cin >> n;
+  while (i <= n) {
+    int c = 1;
+    while (c <= i) {
+	  char ch = 65 + i - 1;
+      cout << ch << ' ';
+      c++;
+    };
+    cout << endl;
+   // ch++;
+    i++;
+  };
+  return 0;
+};
+```
+
+
