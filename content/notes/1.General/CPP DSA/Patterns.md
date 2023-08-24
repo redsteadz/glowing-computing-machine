@@ -234,3 +234,115 @@ int main() {
 ```
 
 
+## Alphabetical Triangles
+![](notes/1.General/CPP%20DSA/attachments/Patterns%202023-08-24%2009.13.59.excalidraw.svg)
+%%[🖋 Edit in Excalidraw](notes/1.General/CPP%20DSA/attachments/Patterns%202023-08-24%2009.13.59.excalidraw.md), and the [dark exported image](notes/1.General/CPP%20DSA/attachments/Patterns%202023-08-24%2009.13.59.excalidraw.dark.svg)%%
+
+```cpp
+int main(){
+	int n = 4;
+	int r = 1;
+	while (r <= n){
+		int c = 1;
+		char ch = ('A' + n - r);
+		while(c <= r){
+			cout << ch << " ";
+			c++;
+			ch++;
+		};
+		cout << endl;
+		r++;
+	};
+	return 0;
+};
+```
+
+## Patterns with Spaces
+![](notes/1.General/CPP%20DSA/attachments/Pasted%20image%2020230824092745.png)
+
+```cpp
+int main(){
+	int n = 4;
+	char sp = 32;
+	int r = 1;
+	while (r <= n){
+		int c = 1;
+		int i = 1;
+		while (i <= (n - r)){
+			cout << " ";
+			i++;
+		};
+		while(c <= r){
+			cout<< "*";
+			c++;
+		};
+		cout << endl;
+		r++;
+	};
+	return 0;
+}
+```
+
+![](notes/1.General/CPP%20DSA/attachments/Pasted%20image%2020230824094056.png)
+ ```cpp
+ int main(){
+	int n = 4;
+	int r = 1;
+	while (r <= n){
+		int c = 1;
+		int num = 1;
+		int sp = 1;
+		// Spaces
+		while (sp <= (n-r)){
+			cout << " ";
+			sp++;
+		};
+
+
+		// Increment
+		while (c <= r){
+			cout << num;
+			c++;
+			num++;
+		};
+		num--;
+
+		// Decrement
+		while (num > 1){
+			num--;
+			cout << num;
+		}
+		cout << endl;
+		r++;
+	};
+	return 0;
+}
+```
+
+![](notes/1.General/CPP%20DSA/attachments/Pasted%20image%2020230824101032.png)
+
+```cpp
+int main(){
+	int n = 5;
+	int r = 1;
+	while (r <= n){
+		int c = 1;
+			while (c <= (n - r + 1)){
+				cout << c;
+				c++;
+			};
+		int i = 1;
+			while ( i <= (r-1)*2){
+				cout << "*";
+				i++;
+			};
+			while (c > 1){
+				c--;
+				cout << c;
+			};
+		cout << endl;
+		r++;
+	};
+	return 0;
+};
+```
