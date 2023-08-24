@@ -24,4 +24,4 @@ sum = a + b
 print sum
 ```
 
-**_NEXT_** &rarr; [[notes/1.General/CPP DSA/CPP|CPP]]
+**_NEXT_** &rarr; [[notes/1.General/CPP DSA/2 CPP|2 CPP]]

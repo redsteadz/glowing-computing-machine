@@ -346,3 +346,5 @@ int main(){
 	return 0;
 };
 ```
+
+***NEXT &rarr;*** [[notes/1.General/CPP DSA/4 Bitewise Operators|4 Bitewise Operators]]
