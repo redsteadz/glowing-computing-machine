@@ -7,8 +7,6 @@ enableToc: false
 
 <h1 align="center"> Navigation </h1>
 
-<nav style="display:flex; justify-content:space-evenly;"> 
-
 ## [[notes/3.ReactJS/001.  ReactJS|001.  ReactJS]]
 
 ## [[notes/4.Rust/001.  Rust|001.  Rust]]
@@ -16,9 +14,6 @@ enableToc: false
 ## [[notes/2.CodeQ/001.   CodeWars|001.   CodeWars]]
 
 ## [[notes/1.General/001.General|001.General]]
-</nav>
-
-
 
 
 <h1 align="center"> Tasks </h2>

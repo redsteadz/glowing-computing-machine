@@ -148,6 +148,23 @@ int main(){
 ```
 
 - Reverse Integer
+
+```cpp
+int main(){
+	int x = 1534236469;
+	int r = 0;
+	while( x != 0){
+		r = r*10 + x%10;
+		cout << "R shit = " << r << endl;
+		x = x/10;
+		cout << "X shit = " << x << endl;
+	};
+	cout << r << endl;
+	return 0;
+}
+```
+
+
 - Compliment of Base 10 int
 - Number compliment
 - Binary to Decimal
