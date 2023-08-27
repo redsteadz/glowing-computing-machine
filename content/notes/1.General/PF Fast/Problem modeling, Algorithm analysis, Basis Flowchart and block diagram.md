@@ -1,3 +1,4 @@
+
 ## Six Steps of Problem Solving
 
 1) Identify the problem 
@@ -28,8 +29,8 @@ Algorithmic solutions is are those which can be solved using a specific amount o
 5) Writing Algorithms.
 
 ### PAC Problem Analysis Chart
-![](PF/attachments/Problem%20modeling,%20Algorithm%20analysis,%20Basis%20Flowchart%20and%20block%20diagram%202023-08-23%2009.02.28.excalidraw.svg)
-%%[🖋 Edit in Excalidraw](PF/attachments/Problem%20modeling,%20Algorithm%20analysis,%20Basis%20Flowchart%20and%20block%20diagram%202023-08-23%2009.02.28.excalidraw.md), and the [dark exported image](PF/attachments/Problem%20modeling,%20Algorithm%20analysis,%20Basis%20Flowchart%20and%20block%20diagram%202023-08-23%2009.02.28.excalidraw.dark.svg)%%
+![[notes/1.General/PF Fast/attachments/Problem modeling, Algorithm analysis, Basis Flowchart and block diagram 2023-08-23 09.02.28.excalidraw.svg]]
+
 - Emphasis on Data?
 **eg**
 
@@ -77,7 +78,8 @@ Q Write a input process Output (IPO) to find an area of a circle where area = pi
 |          | - Display area                 | 3000   |                    |
 |          | - End                          | 0000   |                    | 
 
-Q Write an Input Process Output (IPO) that asks a user to
+>[!question] 
+**Q** Write an Input Process Output (IPO) that asks a user to
 enter the distance of a trip in miles, the miles per gallon
 estimate for the user’s car, and the average cost of a gallon
 of gas. Calculate and display the number of gallons of gas
@@ -106,7 +108,44 @@ needed and the estimated cost of the trip
 |                  | End                                            | 0000   |         | 
 
 ### Flowchart
-![](PF/attachments/Problem%20modeling,%20Algorithm%20analysis,%20Basis%20Flowchart%20and%20block%20diagram%202023-08-23%2009.59.45.excalidraw.svg)
+![[notes/1.General/PF Fast/attachments/Problem modeling, Algorithm analysis, Basis Flowchart and block diagram 2023-08-23 09.59.45.excalidraw.svg]]
 %%[🖋 Edit in Excalidraw](PF/attachments/Problem%20modeling,%20Algorithm%20analysis,%20Basis%20Flowchart%20and%20block%20diagram%202023-08-23%2009.59.45.excalidraw.md), and the [dark exported image](PF/attachments/Problem%20modeling,%20Algorithm%20analysis,%20Basis%20Flowchart%20and%20block%20diagram%202023-08-23%2009.59.45.excalidraw.dark.svg)%%
 
 
+>[!question] 
+> Make a calculator that demands two numbers, and outputs. +, -, \*,  \of the two
+
+| Input | Processing                                              | Module | Output         |
+| ----- | ------------------------------------------------------- | ------ | -------------- |
+| num1  | Enter num1                                              | 1100   | subtraction    |
+| num1  | Enter num2                                              | 1200   | addition       |
+|       | - Calculate subtraction = num1 - num2                   | 1300   | multiplication |
+|       | - Calculate addition = num1 + num2                      | 1400   | division       |
+|       | - Calculate multiplication = num1\*num2                 | 1500   |                |
+|       | - Calculate division = num1/num2                        | 1600   |                |
+|       | Display subtraction, addition, multiplication, division | 2000   |                |
+|       | End                                                     | 0000   |                |
+
+>[!question]
+>Simple calculation of volume
+
+| Input | Processing                            | Module | Output |
+| ----- | ------------------------------------- | ------ | ------ |
+|       | set height = 25                       | 1100   | volume |
+|       | set length = 40                       | 1200   |        |
+|       | set width = 18                         | 1300   |        |
+|       | Calculate $vol = height*length*width$ | 2000   |        |
+|       | Display vol                           | 3000   |        | 
+|       | End                                   | 0000   |        |
+
+
+>[!question]
+>Calc of Hyp using side1 and side2
+
+| Input | Processing                                | Module | Output |
+| ----- | ----------------------------------------- | ------ | ------ |
+|       | set side1 = 10                            | 1100   | hyp    |
+|       | set side2 = 8                             | 1200   |        |
+|       | Calculate $hyp = sqrt(side1^2 + side2^2)$ | 2000   |        |
+|       | Display hyp                               | 3000   |        | 
+|       | End                                       | 0000   |        |
