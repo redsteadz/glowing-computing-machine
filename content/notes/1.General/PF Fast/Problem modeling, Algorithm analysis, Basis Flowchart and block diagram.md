@@ -29,6 +29,7 @@ Algorithmic solutions is are those which can be solved using a specific amount o
 5) Writing Algorithms.
 
 ### PAC Problem Analysis Chart
+
 ![[notes/1.General/PF Fast/attachments/Problem modeling, Algorithm analysis, Basis Flowchart and block diagram 2023-08-23 09.02.28.excalidraw.svg]]
 
 - Emphasis on Data?
@@ -108,6 +109,7 @@ needed and the estimated cost of the trip
 |                  | End                                            | 0000   |         | 
 
 ### Flowchart
+
 ![[notes/1.General/PF Fast/attachments/Problem modeling, Algorithm analysis, Basis Flowchart and block diagram 2023-08-23 09.59.45.excalidraw.svg]]
 %%[🖋 Edit in Excalidraw](PF/attachments/Problem%20modeling,%20Algorithm%20analysis,%20Basis%20Flowchart%20and%20block%20diagram%202023-08-23%2009.59.45.excalidraw.md), and the [dark exported image](PF/attachments/Problem%20modeling,%20Algorithm%20analysis,%20Basis%20Flowchart%20and%20block%20diagram%202023-08-23%2009.59.45.excalidraw.dark.svg)%%
 
