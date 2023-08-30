@@ -1,4 +1,11 @@
-
+---
+title: "Problem modeling, Algorithm analysis, Basis Flowchart and block diagram"
+date: "2023-08-27"
+tags:
+- uni
+- pf
+- flowchart
+---
 ## Six Steps of Problem Solving
 
 1) Identify the problem 
