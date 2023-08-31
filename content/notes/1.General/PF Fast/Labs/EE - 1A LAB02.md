@@ -12,7 +12,7 @@ tags:
 Write source code to display “My name is xyz. I am First semester student of Electrical
 Engineering @ FAST-NU” at output screen?
 
-```run-cpp
+```cpp
 int main(){
 	string name;
 	//cin >> name;
@@ -30,7 +30,7 @@ Write a program that generates the following table:
 1993 16200
 Use a single cout statement for all output.
 
-```run-cpp
+```cpp
 int main(){
 	string tab = "    ";
 	cout << "1990" << tab << "135" << endl 
@@ -98,7 +98,7 @@ screen will only use for data entering/input values)
 Example of using `cls` or `clear`
 They basically clear the screen of the terminal
 
-```run-cpp
+```cpp
 #include <stdlib.h>
 
 int main(){
