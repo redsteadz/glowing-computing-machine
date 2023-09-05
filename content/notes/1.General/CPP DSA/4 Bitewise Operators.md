@@ -166,7 +166,42 @@ int main(){
 
 
 - Compliment of Base 10 int
+```cpp
+#include <math.h>
+
+class Solution {
+public:
+    int bitwiseComplement(int n) {
+    int check = n>>1;
+    int sum = 1;
+    int count = 1;
+	
+	// Loop to find the max_relevant bit, and hence the corresponding number that bits activated till that point
+    while (check != 0){
+        check = check >> 1;
+        sum = sum + pow(2, count);
+        count++;
+    };    
+    int inv = (~n&sum);
+    return inv;
+    }
+};
+
+int main(){
+	Solution i;
+	cout<< i.bitwiseComplement(5) << endl;
+	return 0;
+}
+```
+
+The idea is to take the inverse of the value then multiplying the activated bits with the max bits for the number **e.g**
+
+![](notes/1.General/CPP%20DSA/attachments/4%20Bitewise%20Operators%202023-09-05%2020.36.39.excalidraw.svg)
+%%[🖋 Edit in Excalidraw](notes/1.General/CPP%20DSA/attachments/4%20Bitewise%20Operators%202023-09-05%2020.36.39.excalidraw.md), and the [dark exported image](notes/1.General/CPP%20DSA/attachments/4%20Bitewise%20Operators%202023-09-05%2020.36.39.excalidraw.dark.svg)%%
+
+
 - Number compliment
 - Binary to Decimal
 - Decimal to Binary
 - sqrt(n) where n is an integer
+
