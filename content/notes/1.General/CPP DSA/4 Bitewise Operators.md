@@ -200,8 +200,59 @@ The idea is to take the inverse of the value then multiplying the activated bits
 %%[🖋 Edit in Excalidraw](notes/1.General/CPP%20DSA/attachments/4%20Bitewise%20Operators%202023-09-05%2020.36.39.excalidraw.md), and the [dark exported image](notes/1.General/CPP%20DSA/attachments/4%20Bitewise%20Operators%202023-09-05%2020.36.39.excalidraw.dark.svg)%%
 
 
-- Number compliment
 - Binary to Decimal
-- Decimal to Binary
-- sqrt(n) where n is an integer
+```cpp
+#include <math.h>
 
+int main(){
+	int bit, dec, n, count = 0;
+	cout << "Input your Binary number: ";
+	cin >> n;
+	
+	while (n !=0){
+		bit = n%10;
+		n = n/10;
+		dec = dec + bit * pow(2, count);
+		count++;
+	};
+	cout << "The equivelant decimal number is: " << dec << endl;
+	
+	return 0;
+}
+```
+
+- Decimal to Binary
+```cpp
+#include <math.h>
+int main(){	
+	int n, sum = 0, rev_sum = 0, count = 0;
+	cout << "Enter the integer: ";
+	cin >> n;
+	while(n != 0){
+		sum = sum + (n%2) * pow(10, count);
+		n = n/2;
+		count++;
+	};
+	cout << sum << endl;
+	return 0;
+}
+```
+
+- sqrt(n) where n is an integer
+```cpp
+int main(){
+	float n;
+	cout << "Input your integer: ";
+	cin >> n;
+	float apx = n, prev;
+	
+	while ( prev != apx ){
+			prev = apx;
+			apx = (apx + n/apx)/2.0;
+			cout << apx << endl;
+	};
+	
+	cout << apx;
+	return 0;
+}
+```
