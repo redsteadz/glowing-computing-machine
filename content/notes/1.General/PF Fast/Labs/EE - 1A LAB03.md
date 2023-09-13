@@ -1,5 +1,5 @@
 ---
-title: "{{title}}"
+title: EE - 1A LAB03
 description: This the 3rd lab assignment for EE 1A Fast Karachi
 date: 2023-09-07
 tags:

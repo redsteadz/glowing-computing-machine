@@ -161,3 +161,64 @@ KYN BNAUN ME CPP ME CODE ? FREE ME ?
 */
 ```
 
+## Task 2:
+For each of the following variables, write the most appropriate data type. Also provide a brief reason for
+selecting the data type.
+a) Age - **Integer**
+b) Temperature - **float**
+c) Longitude - **float**
+d) Third letter of your name - **char**
+e) Wind speed - **float**
+
+## Task 3:
+Mr. Rahim works at the cash counter of a retail store. For every customer he serves at the counter, he asks for their name and counts the items they bought. For each of these items he adds the price to the customer’s bill, with that bill also containing the customer’s name. If the bill exceeds 10k, Mr. Rahim is obliged to give the customer a 5% discount. Also, at the end of the day, Mr. Rahim should write the total revenue for the day i.e., the grand total of all the bills combined.
+Draw a detailed flowchart for Mr. Rahim’s activities.
+
+```cpp
+int main(){
+	int count, price, total = 0, discount = 0, cont = 1, gTotal;
+	
+	while(cont == 1){
+		cout << "How many Items are there ? ";
+		cin >> count; 
+		for (int i = 1; i <= count ; i++){
+			cout << "What is the price of the item no # " << i << " ";
+			cin >> price;
+			total = total + price;
+		};
+		if (total >= 10000){
+			total = total*0.95;
+		};
+		gTotal = gTotal + total;
+		cout << "The total is " << endl << total;
+		cout << "Total sales for the day till now are " << endl << gTotal;
+		cout << "Continue ? " << endl;
+		cin >> cont;
+	}
+	return 0;
+}
+```
+
+## Task 4:
+Write a program that takes an integer, as an input from its user and print its binary equivalent value on screen. You are required to write the pseudocode or algorithm or flowchart to show the pre-programming process along with the code written in C program.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	int num, bit, count = 1, binary = 0;
+	printf("BHAI NUMBER TO DO ");
+	scanf("%d", &num);
+	while(num != 0){
+		bit = num % 2;
+		binary = binary + bit*pow(10, count);
+		count++;
+		num = num/2;
+		
+	};
+	printf("%d ", binary);
+	
+	return 0;
+}
+```
