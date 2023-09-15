@@ -222,3 +222,60 @@ int main(){
 	return 0;
 }
 ```
+
+## Task 5
+Mr. Salman ran a small grocery business. He works on 15% profit on sale of each item. He also deduct
+18% GST on each sale that he made. Write a program that prompt user to input price of five items
+individually and then print the sales receipt including all necessary details as shown below:
+OUTPUT:
+
+SALMAN grocery Store
+--------------------------------------------------
+Description | Price
+---------------------------------------------------
+Item 1 | 25
+Item 2 | 165
+Item 3 | 200
+Item 4 | 350
+Item 5 | 75
+---------------------------------------------------
+Item Total | 815
+G.S.T | 146.7
+----------------------------------------------------
+Grand Total | 961.7
+
+Total Profit Earned | 122.25
+
+```c
+#include <stdio.h>
+
+int main(){
+	int i1, i2, i3, i4, i5;
+		printf("Input price of Item1 ");
+		scanf("%d", &i1);
+		printf("Input price of Item2 ");
+		scanf("%d", &i2);
+		printf("Input price of Item3 ");
+		scanf("%d", &i3);
+		printf("Input price of Item4 ");
+		scanf("%d", &i4);
+		printf("Input price of Item5 ");
+		scanf("%d", &i5);
+	
+	int total = i1+i2+i3+i4+i5;
+	printf("SALMAN grocery Store\n");
+	printf("--------------------\n");
+	printf("Item 1    |   %d\n", i1);
+	printf("Item 2    |   %d\n", i2);
+	printf("Item 3    |   %d\n", i3);
+	printf("Item 4    |   %d\n", i4);
+	printf("Item 5    |   %d\n", i5);
+	printf("--------------------\n");
+	printf("ItemTotal |   %d\n", total);
+	printf("GST       |   %.1f\n", total*0.18);
+	printf("--------------------\n");
+	printf("GrandTotal|   %.1f\n", 1.18*total );
+	printf("Profit    |   %.1f\n", total*0.15);
+	return 0;
+}
+```
