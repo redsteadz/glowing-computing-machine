@@ -85,7 +85,7 @@ int main(){
 	vector <int> list = {
 		5,2,5,7,3,8,36,74,23
 	};
-	for (int i=0; i< list.size(); i++){
+	for (int i=0; i< 10; i++){
 		if (list[i] < min){
 			min = list[i];
 		};
