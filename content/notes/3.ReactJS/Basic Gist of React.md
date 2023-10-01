@@ -1,3 +1,11 @@
+---
+title: Basic Gist of React
+tags:
+  - react
+  - basic
+  - how-to
+  - fundamental
+---
 
 ---
 title: "Basic Gist of React"
@@ -7,6 +15,7 @@ tags:
 - how-to
 - fundamentals
 ---
+
 React is based on UI by components
 Components are basically "sections " or "divisions" of a website as illustrated below
 ![](notes/3.ReactJS/attachments/Basic%20Gist%20of%20React%202023-06-16%2008.30.06.excalidraw.svg)
