@@ -52,6 +52,6 @@ fn greet(name: &str, owner: &str) -> String {
 ```
 
 The return value is not in String, it is in str ? 
-- [ ] 🔼 Learn the Difference between Str and String #task 
+- [x] 🔼 Learn the Difference between Str and String #task
 
 [Link](https://www.codewars.com/kata/5772da22b89313a4d50012f7/rust)

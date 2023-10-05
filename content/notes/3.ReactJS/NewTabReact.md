@@ -388,4 +388,4 @@ Definitely need to learn how to properly, easily make responsive design.. Maybe 
 - [x] Make the search icon an object instead of background #task  [completion:: 2023-08-06]
 
 ## Problems
-- [ ] Fixing the App for best practices! #task
+- [x] Fixing the App for best practices! #task

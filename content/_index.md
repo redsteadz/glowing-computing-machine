@@ -34,6 +34,8 @@ enableToc: false
 	- [[notes/2.CodeQ/Medium/215. Kth Largest Element in an Array|215. Kth Largest Element in an Array]]
 	- [2545. Sort the Students by Their Kth Score](notes/2.CodeQ/Medium/2545.%20Sort%20the%20Students%20by%20Their%20Kth%20Score.md)
 	- [[notes/2.CodeQ/Medium/2616. Minimize the Maximum Difference of pairs|2616. Minimize the Maximum Difference of pairs]]
+- **Easy**
+	- [[notes/2.CodeQ/Easy/2544. Alternating Digit Sum|2544. Alternating Digit Sum]]
 
 ## [[notes/1.General/001.General|001.General]]
 
@@ -97,30 +99,8 @@ from #daily
 - Never stray from the way.
 
 ## What I want to be in 5 years.
-### Health
-- Gain a lot more weight and muscle
-- Eat more healthy and regularly
-- Not forgetting to eat breakfast
-- Regularly going to the gym 
-### Career
-- Having intermediate understanding on Front and Backend
-- Into freelancing and earning from it feasibly
-- Regularly writing programs
--  Understand complex algorithms
-- Write blogs explaining these complex ideas (To strengthen the ideas)
-### Hobby
-- Play sports more
-	- Football ? Basketball ?
-- Read more books
-	- ???
-- Note down how much time is wasted daily on the phone
-- Log down all the data including regular financial costs, Time spent programming
-- LEARN CHESS! PLAY MORE CHESSS!!!
-### Religion
-- Pray 5 times a day
-- Watch more religious videos 
-- Fix your religious understandings and knowledge
-### Mental Health
-- Independent strength.
 
-# 2023. Make Yourself Into something You are Proud of.
+```
+ There is a lot to do and not a lot of time to do it, Value the time and things you have and progress accordingly. Otherwise you are already far behind and will continue to lose daily.
+```
+

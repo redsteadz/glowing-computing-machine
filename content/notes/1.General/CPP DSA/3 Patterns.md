@@ -114,7 +114,7 @@ int main(){
 }
 ```
 
-- [ ] Do this without `int num = r` #task 
+- [x] Do this without `int num = r` #task
 
 
 ### Blocked Letters Itteration
