@@ -1,0 +1,433 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="If we were to break the big task of making a tictactoe game into smaller ones it would be
+ Making the Board Taking options and replacing positions Finding out the victor/tie  Making the board Making the board is simple enough by using some ideas of for loops and arrays we can make a simple looking board as such"><title>A simple example of TicTacToe</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://redsteadz.github.io/glowing-computing-machine//icon.png><link href=https://redsteadz.github.io/glowing-computing-machine/styles.7d8fe9cf3be16ba54e12dabf77a25b38.min.css rel=stylesheet><link href=https://redsteadz.github.io/glowing-computing-machine/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://redsteadz.github.io/glowing-computing-machine/js/darkmode.524c4887b76b5ee343237fc6d1b4edca.min.js></script>
+<script src=https://redsteadz.github.io/glowing-computing-machine/js/util.6f22941e242efae60fd84e7c32e874fa.min.js></script>
+<link rel=preload href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css as=style onload='this.onload=null,this.rel="stylesheet"' integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/copy-tex.min.js integrity=sha384-ww/583aHhxWkz5DEVn6OKtNiIaLi2iBRNZXfJRiY1Ai7tnJ9UXpEsyvOITVpTl4A crossorigin=anonymous></script>
+<script async src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script async src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script async src=https://redsteadz.github.io/glowing-computing-machine/js/popover.f03552ccb84d99ca615d1cfb9abde59e.min.js></script>
+<script defer src=https://redsteadz.github.io/glowing-computing-machine/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
+<script defer src=https://redsteadz.github.io/glowing-computing-machine/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
+<script defer src=https://redsteadz.github.io/glowing-computing-machine/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://redsteadz.github.io/glowing-computing-machine/",fetchData=Promise.all([fetch("https://redsteadz.github.io/glowing-computing-machine/indices/linkIndex.c65fc1e5e4554a9a1c380783700e08b2.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://redsteadz.github.io/glowing-computing-machine/indices/contentIndex.ce556d59484a04747c0e34a4dcbd12be.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://redsteadz.github.io/glowing-computing-machine",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://redsteadz.github.io/glowing-computing-machine",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/redsteadz.github.io\/glowing-computing-machine\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
+    attachSPARouting(init, render)
+  </script></head><script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD95KB4J"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-XYFD95KB4J",{anonymize_ip:!1})}</script><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://redsteadz.github.io/glowing-computing-machine/js/full-text-search.e6e2e0c213187ca0c703d6e2c7a77fcd.min.js></script><div class=singlePage><header><h1 id=page-title><a href=https://redsteadz.github.io/glowing-computing-machine/>侍 DevSensei</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><h1>A simple example of TicTacToe</h1><p class=meta>Last updated
+Oct 5, 2023
+<a href=https://github.com/jackyzha0/quartz/tree/hugo/content/notes/1.General/PF%20Fast/Project/A%20simple%20example%20of%20TicTacToe.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://redsteadz.github.io/glowing-computing-machine/tags/algorithms/>Algorithms</a></li><li><a href=https://redsteadz.github.io/glowing-computing-machine/tags/general/>General</a></li><li><a href=https://redsteadz.github.io/glowing-computing-machine/tags/patterns/>Patterns</a></li></ul><aside class=mainTOC><details><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><a href=#making-the-board>Making the board</a></li><li><a href=#taking-inputs-and-making-replacements>Taking inputs and making replacements</a></li><li><a href=#winner-or-not->Winner or Not ?</a></li></ol></nav></details></aside><p>If we were to break the <em>big</em> task of making a tictactoe game into smaller ones it would be</p><ol><li>Making the Board</li><li>Taking options and replacing positions</li><li>Finding out the victor/tie</li></ol><a href=#making-the-board><h2 id=making-the-board><span class=hanchor arialabel=Anchor># </span>Making the board</h2></a><p>Making the board is simple enough by using some ideas of for loops and arrays we can make a simple looking board as such</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl>	<span class=c1>// The board would consist of 3x3 characters
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kt>char</span> <span class=n>board</span><span class=p>[</span><span class=mi>3</span><span class=p>][</span><span class=mi>3</span><span class=p>]</span> <span class=o>=</span> <span class=p>{{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>},</span> <span class=p>{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>},</span> <span class=p>{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>}};</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=n>printf</span><span class=p>(</span><span class=s>&#34;Borad</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>j</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>j</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34; %c |&#34;</span><span class=p>,</span> <span class=n>board</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>j</span><span class=p>]);</span> <span class=c1>// Prints the character of with a border |
+</span></span></span><span class=line><span class=cl><span class=c1></span>		<span class=p>};</span>
+</span></span><span class=line><span class=cl>		<span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span> <span class=c1>// New line for the new row
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>Output:</strong>
+Board:
+- | - | - |
+- | - | - |
+- | - | - |</p><ul><li>Using If conditions you can making it have the left border as well, Visually speaking a lot of things is possible with a lot more variety and much more appeal. But this is just to show how it can be operational</li></ul><a href=#taking-inputs-and-making-replacements><h2 id=taking-inputs-and-making-replacements><span class=hanchor arialabel=Anchor># </span>Taking inputs and making replacements</h2></a><p>What we can do here is simply, replace the character at the x, y position as our characters are entirely within an array</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kt>char</span> <span class=n>board</span><span class=p>[</span><span class=mi>3</span><span class=p>][</span><span class=mi>3</span><span class=p>]</span> <span class=o>=</span> <span class=p>{{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>},</span> <span class=p>{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>},</span> <span class=p>{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>}};</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>loc</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>scanf</span><span class=p>(</span><span class=s>&#34;%d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>loc</span><span class=p>);</span> <span class=c1>// Implies the location
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kt>int</span> <span class=n>y</span> <span class=o>=</span> <span class=n>loc</span> <span class=o>%</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>x</span> <span class=o>=</span> <span class=n>loc</span> <span class=o>/</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=n>board</span><span class=p>[</span><span class=n>x</span><span class=p>][</span><span class=n>y</span><span class=p>]</span> <span class=o>=</span> <span class=sc>&#39;X&#39;</span><span class=p>;</span> <span class=c1>// This would replace it with X no matter what
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=n>printf</span><span class=p>(</span><span class=s>&#34;Borad</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>j</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>j</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34; %c |&#34;</span><span class=p>,</span> <span class=n>board</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>j</span><span class=p>]);</span> 
+</span></span><span class=line><span class=cl>		<span class=p>};</span>
+</span></span><span class=line><span class=cl>		<span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>In order to keep track of</p><ol><li>If it should be X or O</li><li>The game should end
+We can declare a <code>sel</code> variable which will simply keep track of how many selections we&rsquo;ve done</li></ol><ul><li>If <code>sel</code> is even It can be &lsquo;X&rsquo;</li><li>Odd -> &lsquo;O&rsquo;</li></ul><p>Furthermore to change the value of X and O, We can declare an <code>opt</code> variable to simply store what character we are on</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kt>char</span> <span class=n>board</span><span class=p>[</span><span class=mi>3</span><span class=p>][</span><span class=mi>3</span><span class=p>]</span> <span class=o>=</span> <span class=p>{{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>},</span> <span class=p>{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>},</span> <span class=p>{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>}};</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>loc</span><span class=p>,</span> <span class=n>sel</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span> <span class=c1>// As the first time selection will be 1st
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kt>char</span> <span class=n>opt</span> <span class=o>=</span> <span class=sc>&#39;-&#39;</span><span class=p>;</span> <span class=c1>// Default value is null
+</span></span></span><span class=line><span class=cl><span class=c1></span>	
+</span></span><span class=line><span class=cl>	<span class=k>while</span> <span class=p>(</span><span class=n>sel</span> <span class=o>&lt;=</span> <span class=mi>9</span><span class=p>){</span> <span class=c1>// A loop to keep asking locations
+</span></span></span><span class=line><span class=cl><span class=c1></span>	    
+</span></span><span class=line><span class=cl>	<span class=n>scanf</span><span class=p>(</span><span class=s>&#34;%d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>loc</span><span class=p>);</span> 
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>y</span> <span class=o>=</span> <span class=n>loc</span> <span class=o>%</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>x</span> <span class=o>=</span> <span class=n>loc</span> <span class=o>/</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=n>board</span><span class=p>[</span><span class=n>y</span><span class=p>][</span><span class=n>x</span><span class=p>]</span> <span class=o>=</span> <span class=sc>&#39;-&#39;</span><span class=p>){</span> <span class=c1>// Checks if the position hasn&#39;t already been picked
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=k>if</span> <span class=p>(</span><span class=n>sel</span> <span class=o>%</span> <span class=mi>2</span> <span class=o>==</span> <span class=mi>0</span><span class=p>){</span> <span class=c1>// switches between X and O as selection continues
+</span></span></span><span class=line><span class=cl><span class=c1></span>	    <span class=n>opt</span> <span class=o>=</span> <span class=sc>&#39;X&#39;</span><span class=p>;</span>  
+</span></span><span class=line><span class=cl>	<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	    <span class=n>opt</span> <span class=o>=</span> <span class=sc>&#39;O&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=n>board</span><span class=p>[</span><span class=n>x</span><span class=p>][</span><span class=n>y</span><span class=p>]</span> <span class=o>=</span> <span class=n>opt</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>printf</span><span class=p>(</span><span class=s>&#34;Borad</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>j</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>j</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34; %c |&#34;</span><span class=p>,</span> <span class=n>board</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>j</span><span class=p>]);</span> 
+</span></span><span class=line><span class=cl>		<span class=p>};</span>
+</span></span><span class=line><span class=cl>		<span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=n>sel</span><span class=o>++</span><span class=p>;</span> <span class=c1>// Increments the selections
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>Now to handle an inconvenience issue, Currently, We are taking inputs x and y with respect to 0 as the initial value. But that isn&rsquo;t what we usually do
+<img src=https://redsteadz.github.io/glowing-computing-machine//notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2019.49.50.excalidraw.svg width=auto alt>
+%%
+<a rel=noopener class="internal-link broken" data-src=notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2019.49.50.excalidraw>🖋 Edit in Excalidraw</a>, and the
+<a rel=noopener class="internal-link broken" data-src=notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2019.49.50.excalidraw.dark.svg>dark exported image</a>%%</p><p>We can do this by just taking such and such inputs and decrementing x and y by 1</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>y</span> <span class=o>=</span> <span class=n>loc</span> <span class=o>%</span> <span class=mi>10</span><span class=p>;</span> <span class=c1>// Taking x and y values starting from 1
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kt>int</span> <span class=n>x</span> <span class=o>=</span> <span class=n>loc</span> <span class=o>/</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>x</span><span class=o>--</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>y</span><span class=o>--</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><p>Like so</p><a href=#winner-or-not-><h2 id=winner-or-not-><span class=hanchor arialabel=Anchor># </span>Winner or Not ?</h2></a><p>This is where the idea becomes mildly interesting, Some things to keep in mind</p><ol><li>Check the victor when a location has been placed</li><li>Check if the declared <code>opt</code> is same for <em>specific portions</em></li></ol><p>We can divide the victories into specific portions</p><ul><li><p>Vertical</p><ul><li>Where the y axis (row) the same<ul><li>So keeping x of <code>loc</code>, we can increment j (y value) from 0 to 2 to see if the vertical for that specific X position is the same</li><li><img src=https://redsteadz.github.io/glowing-computing-machine//notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.02.59.excalidraw.svg width=auto alt>
+%%
+<a rel=noopener class="internal-link broken" data-src=notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.02.59.excalidraw>🖋 Edit in Excalidraw</a>, and the
+<a rel=noopener class="internal-link broken" data-src=notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.02.59.excalidraw.dark.svg>dark exported image</a>%%</li></ul></li></ul></li><li><p>Horizontal</p><ul><li>Where the x axis (column) the same<ul><li>So keeping y of <code>loc</code>, we can increment i (x value) from 0 to 2 to see if the vertical for that specific Y position is the same</li></ul></li><li><img src=https://redsteadz.github.io/glowing-computing-machine//notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.08.27.excalidraw.svg width=auto alt>
+%%
+<a rel=noopener class="internal-link broken" data-src=notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.08.27.excalidraw>🖋 Edit in Excalidraw</a>, and the
+<a rel=noopener class="internal-link broken" data-src=notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.08.27.excalidraw.dark.svg>dark exported image</a>%%</li></ul></li><li><p>Diagonal</p><ul><li>Where the x++ and y&ndash; are the same<ul><li>No value from the <code>loc</code> will be relevant</li></ul></li><li><img src=https://redsteadz.github.io/glowing-computing-machine//notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.11.55.excalidraw.svg width=auto alt>
+%%
+<a rel=noopener class="internal-link broken" data-src=notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.11.55.excalidraw>🖋 Edit in Excalidraw</a>, and the
+<a rel=noopener class="internal-link broken" data-src=notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.11.55.excalidraw.dark.svg>dark exported image</a>%%</li></ul></li><li><p>Anti-Diagonal</p><ul><li>Where the x++ and y++ are the same<ul><li>No value from the <code>loc</code> will be relevant</li></ul></li><li><img src=https://redsteadz.github.io/glowing-computing-machine//notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.16.02.excalidraw.svg width=auto alt>
+%%
+<a rel=noopener class="internal-link broken" data-src=notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.16.02.excalidraw>🖋 Edit in Excalidraw</a>, and the
+<a rel=noopener class="internal-link broken" data-src=notes/1.General/PF%20Fast/Project/attachments/A%20simple%20example%20of%20TicTacToe%202023-10-05%2020.16.02.excalidraw.dark.svg>dark exported image</a>%%</li></ul></li></ul><p>In terms of code it would look like this</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl>	<span class=c1>// Column
+</span></span></span><span class=line><span class=cl><span class=c1></span>	
+</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=p>(</span><span class=n>board</span><span class=p>[</span><span class=n>x</span><span class=p>][</span><span class=n>i</span><span class=p>]</span> <span class=o>!=</span> <span class=n>opt</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>i</span> <span class=o>==</span> <span class=mi>2</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34;WIN WIN WIN %c&#34;</span><span class=p>,</span> <span class=n>opt</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>			<span class=n>win</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=c1>// Vertical
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=p>(</span><span class=n>board</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>y</span><span class=p>]</span> <span class=o>!=</span> <span class=n>opt</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>i</span> <span class=o>==</span> <span class=mi>2</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34;Winnn %c&#34;</span><span class=p>,</span> <span class=n>opt</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>			<span class=n>win</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> 
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=c1>// Diagonal
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span><span class=n>j</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=p>(</span><span class=n>board</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>j</span><span class=p>]</span> <span class=o>!=</span> <span class=n>opt</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>i</span><span class=o>==</span><span class=mi>2</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34;WINNN %c&#34;</span><span class=p>,</span> <span class=n>opt</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>			<span class=n>win</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span>
+</span></span><span class=line><span class=cl>		<span class=n>j</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=c1>// Anti Diagonal
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>,</span> <span class=n>j</span> <span class=o>=</span> <span class=mi>2</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=p>(</span><span class=n>board</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>j</span><span class=p>]</span> <span class=o>!=</span> <span class=n>opt</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>i</span> <span class=o>==</span> <span class=mi>2</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34;Winnnnnn %c&#34;</span><span class=p>,</span> <span class=n>opt</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>			<span class=n>win</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span>
+</span></span><span class=line><span class=cl>		<span class=n>j</span><span class=o>--</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span></code></pre></td></tr></table></div></div><p>We can keep track of if a person won or not by simply having a int variable <code>win</code> and placing it in the condition of while loop, To function as long as it has a value of <code>0</code> (No victor yet)</p><p>The overall code for this would look something like this</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl>	<span class=kt>char</span> <span class=n>board</span><span class=p>[</span><span class=mi>3</span><span class=p>][</span><span class=mi>3</span><span class=p>]</span> <span class=o>=</span> <span class=p>{{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>},</span> <span class=p>{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>},</span> <span class=p>{</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=sc>&#39;-&#39;</span><span class=p>}};</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>sel</span> <span class=o>=</span> <span class=mi>1</span><span class=p>,</span> <span class=n>loc</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>win</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=k>while</span> <span class=p>(</span><span class=n>sel</span> <span class=o>&lt;</span> <span class=mi>8</span> <span class=o>&amp;&amp;</span> <span class=n>win</span> <span class=o>==</span> <span class=mi>0</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>loc</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>scanf</span><span class=p>(</span><span class=s>&#34;%d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>loc</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=kt>char</span> <span class=n>opt</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>y</span> <span class=o>=</span> <span class=n>loc</span> <span class=o>%</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>x</span> <span class=o>=</span> <span class=n>loc</span> <span class=o>/</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>x</span><span class=o>--</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=n>y</span><span class=o>--</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=p>(</span><span class=n>board</span><span class=p>[</span><span class=n>x</span><span class=p>][</span><span class=n>y</span><span class=p>]</span> <span class=o>==</span> <span class=sc>&#39;-&#39;</span><span class=p>){</span>	
+</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=p>(</span><span class=n>sel</span> <span class=o>%</span> <span class=mi>2</span> <span class=o>==</span> <span class=mi>0</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=n>opt</span> <span class=o>=</span> <span class=sc>&#39;X&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>opt</span> <span class=o>=</span> <span class=sc>&#39;O&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=p>};</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=n>board</span><span class=p>[</span><span class=n>x</span><span class=p>][</span><span class=n>y</span><span class=p>]</span> <span class=o>=</span> <span class=n>opt</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=c1>// Board
+</span></span></span><span class=line><span class=cl><span class=c1></span>	
+</span></span><span class=line><span class=cl>	<span class=n>printf</span><span class=p>(</span><span class=s>&#34;Board </span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>j</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>j</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34; %c |&#34;</span><span class=p>,</span> <span class=n>board</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>j</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span>
+</span></span><span class=line><span class=cl>		<span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=c1>// Column
+</span></span></span><span class=line><span class=cl><span class=c1></span>	
+</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=p>(</span><span class=n>board</span><span class=p>[</span><span class=n>x</span><span class=p>][</span><span class=n>i</span><span class=p>]</span> <span class=o>!=</span> <span class=n>opt</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>i</span> <span class=o>==</span> <span class=mi>2</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34;WIN WIN WIN %c&#34;</span><span class=p>,</span> <span class=n>opt</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>			<span class=n>win</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=c1>// Vertical
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=p>(</span><span class=n>board</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>y</span><span class=p>]</span> <span class=o>!=</span> <span class=n>opt</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>i</span> <span class=o>==</span> <span class=mi>2</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34;Winnn %c&#34;</span><span class=p>,</span> <span class=n>opt</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>			<span class=n>win</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> 
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=c1>// Diagonal
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span><span class=n>j</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=p>(</span><span class=n>board</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>j</span><span class=p>]</span> <span class=o>!=</span> <span class=n>opt</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>i</span><span class=o>==</span><span class=mi>2</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34;WINNN %c&#34;</span><span class=p>,</span> <span class=n>opt</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>			<span class=n>win</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span>
+</span></span><span class=line><span class=cl>		<span class=n>j</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=c1>// Anti Diagonal
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>,</span> <span class=n>j</span> <span class=o>=</span> <span class=mi>2</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=p>(</span><span class=n>board</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=n>j</span><span class=p>]</span> <span class=o>!=</span> <span class=n>opt</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>i</span> <span class=o>==</span> <span class=mi>2</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>			<span class=n>printf</span><span class=p>(</span><span class=s>&#34;Winnnnnn %c&#34;</span><span class=p>,</span> <span class=n>opt</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>			<span class=n>win</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>		<span class=p>}</span>
+</span></span><span class=line><span class=cl>		<span class=n>j</span><span class=o>--</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	
+</span></span><span class=line><span class=cl>	<span class=n>sel</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>We can take this entire <code>check</code>, Place it in a function and then into the while loop, Making the overall code more <em>elegant</em>
+But that requires some understanding from later on stuffs!</p></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li>No backlinks found</li></ul></div><div><script async src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://redsteadz.github.io/glowing-computing-machine/js/graph.2d9e48dbe7ea47c0ef1c58296ce14448.js></script></div></div><div id=contact_buttons><footer><p>Made by Hamees using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><ul><li><a href=https://redsteadz.github.io/glowing-computing-machine/>Home</a></li><li><a href=https://twitter.com/_jzhao>Twitter</a></li><li><a href=https://github.com/jackyzha0>GitHub</a></li></ul></footer></div></div></body></html>
