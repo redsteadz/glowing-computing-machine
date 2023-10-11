@@ -100,7 +100,8 @@ from #daily
 
 ## What I want to be in 5 years.
 
-```
- There is a lot to do and not a lot of time to do it, Value the time and things you have and progress accordingly. Otherwise you are already far behind and will continue to lose daily.
-```
+>[!note] 
+> There is a lot to do and not a lot of time to do it, Value the time and things you have and
+> progress accordingly. Otherwise you are already far behind and will continue to lose daily.
+
 
