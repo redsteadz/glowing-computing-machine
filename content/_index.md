@@ -30,7 +30,10 @@ enableToc: false
 	- [[notes/2.CodeQ/5 kyu/ROT 13 Conversion|ROT 13 Conversion]]
 - **Hard**
 	- [[notes/2.CodeQ/Hard/239. Sliding Window Maximum|239. Sliding Window Maximum]]
+	- [[4. Median of Two Sorted Arrays]]
 - **Medium**
+	- [[3. Longest Substring Without Repeating Characters]]
+	- [[79. Word Search]]
 	- [[notes/2.CodeQ/Medium/215. Kth Largest Element in an Array|215. Kth Largest Element in an Array]]
 	- [2545. Sort the Students by Their Kth Score](notes/2.CodeQ/Medium/2545.%20Sort%20the%20Students%20by%20Their%20Kth%20Score.md)
 	- [[notes/2.CodeQ/Medium/2616. Minimize the Maximum Difference of pairs|2616. Minimize the Maximum Difference of pairs]]
@@ -53,6 +56,7 @@ enableToc: false
 - **PF Fast**
 	- **Assignments**
 		- [[notes/1.General/PF Fast/Assignments/BCS - Karachi 01|BCS - Karachi 01]]
+		- [[BCS - Karachi 02]]
 	- **Labs**
 		- [[notes/1.General/PF Fast/Labs/EE - 1A LAB03|EE - 1A LAB03]]
 		- [[notes/1.General/PF Fast/Labs/EE - 1A LAB02|EE - 1A LAB02]]

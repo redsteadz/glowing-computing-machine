@@ -20,6 +20,47 @@ Write a C program to perform the following tasks:
 - Number of centuries (innings with a score of 100 or more)
 - Number of half-centuries (innings with a score of 50-99)
 Your program should display the statistics for each batsman individually.
+```c
+#include <stdio.h>
+
+int main (){
+  int bt, in;
+  scanf("%d%d", &bt, &in);
+  
+  int perf[bt][in];
+
+  for (int i=0; i < bt; i++){
+
+    for(int j=0; j < in; j++){
+      printf("For the Batsman %d, %d inning: ", i, j);
+      scanf("%d",&perf[i][j]);
+
+    }
+  }
+
+  // Total 
+  for (int i=0; i < bt; i++){
+    int sum = 0, max = -1, cent = 0, hCent=0;
+    for(int j=0; j < in; j++){
+      printf("For the Batsman %d, %d inning: ", i, j);
+      scanf("%d", &perf[i][j]);
+      sum += perf[i][j];
+      if (max < perf[i][j]){max = perf[i][j];}
+      if (perf[i][j] >= 100){cent++;}
+      else if (perf[i][j] >= 50){ hCent++;}
+    }
+    int avg = sum/in;
+    printf("Batsman #%d", i+1);
+    printf("\tTotal runs: %d \n", sum);
+    printf("\tAverage: %d", avg);
+    printf("\tHighest: %d", max);
+    printf("\tCenturies: %d", cent);
+    printf("\tHalf Centuries: %d", hCent);
+  }
+  return 0;
+}
+
+```
 
 ### Question: 02 \[10 points]
 You are tasked with implementing a program to find the largest square submatrix of 1s in a given binary
@@ -29,6 +70,68 @@ matrix. Write a C program that does the following:
 3. Display the dimensions (rows and columns) of the largest square submatrix found.
 4. If there are more than one largest square matrix, then find any one of them.
 
+```c
+#include <stdio.h>
+
+// Function to check a subarray with a given range
+int check(int y, int x, int r, int size, int arr[size][size]) {
+    int h = x + r;
+    int v = y + r;
+
+    if (h > size || v > size) {
+        return -1;
+    }
+
+    for (int i = y; i < v && i < size; i++) {
+        for (int j = x; j < h && j < size; j++) {
+            if (arr[i][j] == 0) {
+                return 0;
+            }
+        }
+    }
+
+    return 1;
+}
+
+// Function to find the maximum subarray
+int subarr(int size, int arr[size][size]) {
+    int max = 0;
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            if (arr[i][j] == 1) {
+                int s = 1;
+                while (check(i, j, s, size, arr) > 0) {
+                    s++;
+                }
+
+                if (max < s - 1) {
+                    max = s - 1;
+                }
+            }
+        }
+}
+
+    printf("Max: %d", max);
+    return max;
+}
+
+int main() {
+    int size = 5;
+    int arr[5][5] = {
+      {1, 0, 1, 0, 0},
+      {1, 1, 1, 1, 1},
+      {0, 1, 1, 1, 0},
+      {1, 1, 1, 1, 1},
+      {1, 1, 0, 1, 1}
+    };
+
+    subarr(size, arr);
+
+    return 0;
+}
+
+```
 
 ### Question: 03 \[20 points]
 You are assisting a traveler who is planning a trip and needs to book a flight for a specific day and time
@@ -40,17 +143,14 @@ of 1 indicates that the flight is available (not full) for that time slot, and 0
 
 ![](notes/1.General/PF%20Fast/Assignments/attachments/Pasted%20image%2020231018204449.png)
 
-1. Analyze the flight availability for each day and time slot. Determine the day and time slot where
-the traveler has the highest chance of booking a flight on the basis user preferences i.e. based on
-time and price.
-2. The traveler is flexible with the day of travel but prefers the morning time slot. Determine the
-day(s) when a flight is available in the morning and suggest the best option for booking based on
-this preference.
-3. Considering the traveler's preference for an evening flight, identify the day(s) when an evening
-flight is available and suggest the best option for booking based on this preference.
-4. The traveler is inquiring about flights on a specific day. Confirm if flights are available or not and
-provide the prices if available.
+1. Analyze the flight availability for each day and time slot. Determine the day and time slot where the traveler has the highest chance of booking a flight on the basis user preferences i.e. based on time and price.
+2. The traveler is flexible with the day of travel but prefers the morning time slot. Determine the day(s) when a flight is available in the morning and suggest the best option for booking based on this preference.
+3. Considering the traveler's preference for an evening flight, identify the day(s) when an evening flight is available and suggest the best option for booking based on this preference.
+4. The traveler is inquiring about flights on a specific day. Confirm if flights are available or not and provide the prices if available.
 
+```c
+
+```
 ### Question 04 [20 points]
 You are given a maze represented by a 2D array. The maze consists of walls represented by 'W', open
 paths represented by 'O', the starting point represented by 'S', and the exit represented by 'E'. The
@@ -78,6 +178,59 @@ W W O E W
 Output Maze after traversal:
 0,0 0,1 0,2 1,2 2,2 3,2 4,2 4,3
 
+```c
+#include <stdio.h>
+int search(int N, int M, char maze[N][M], int x, int y, int ans[20], int pos){
+  printf("Searching a %d %d \n", y, x);
+
+  if (y >= N || x>= M || maze[y][x] == 'W'){return 0;}
+  
+  if(maze[y][x] == 'E'){
+    ans[pos] = y;
+    ans[pos+1] = x;
+    return 1;
+  }
+  if(search(N,M, maze, x+1,y, ans, pos+2)){
+    ans[pos] = y;
+    ans[pos+1]= x;
+    return 1;
+  }
+  if (search(N,M,maze,x,y+1, ans, pos+2)){
+    ans[pos] = y;
+    ans[pos+1] = x;
+    return 1;
+  }
+
+  return 0;
+}
+
+int main(){
+
+  char maze[5][5] = {
+    {'S', 'O', 'O', 'W', 'W'},
+    {'O', 'W', 'O', 'O', 'W'},
+    {'O', 'O', 'O', 'W', 'O'},
+    {'W', 'W', 'O', 'W', 'O'},
+    {'W', 'W', 'O', 'E', 'W'}
+  };
+  int ans[20] = {0};
+  int pos = 0;
+  for (int i = 0; i < 5; i++){
+    for (int j=0; j < 5; j++){
+      if (maze[i][j] == 'S'){
+        if (search(5, 5, maze, j, i, ans, pos)){
+          for (int i = 0; i < 20; i+=2){
+            printf("%d,%d ", ans[i], ans[i+1]);
+          }
+          printf("FOUND\n");
+        }else{printf("NOOTT\n");}
+      };
+    }
+  }
+}
+
+```
+
 Question 05 \[20 points]
 Ramanujan-Hardy Numbers 2-way are numbers that are the sum of two cubes two different ways.
 Following are the first few Ramanujan-Hardy 2-way numbers:
@@ -89,6 +242,32 @@ E.g., 1729 = 12^3 + 1^3 = 9^3 + 10^3.
 A. Write a C program to find all Ramanujan-Hardy numbers less than n^3.
 B. Draw a trace table on a paper for the input 1729.
 
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+ int n = 1729;
+  printf("%ld\n", n);
+  int prev = 0;
+  for (int i = 0; i < n; i++){
+    for (int j = 0; j < n; j++){
+      for (int k = 0; k < n; k++){
+        for (int l = 0; l < n; l++){
+          if (i != j && i != k && i != l && j != k && j!=l && k!=l && prev != (pow(i, 3)+pow(j,3))){
+            int sum = pow(i, 3) + pow(j,3);
+            int sum2 = pow(k,3) + pow(l,3);
+            if (sum == sum2){printf("%d ", sum); prev=sum;}
+          }
+        }
+      }
+    }
+  }
+
+}
+
+```
 
 ### Question 06 \[10 points]
 Given a 1D array of N integers, and a target integer t.
@@ -98,6 +277,24 @@ List: 1, 8, 10, 12, 7, 4, 3 and t: 11
 Sample Output:
 Pairs: (1, 10), (7,4), (8,3)
 
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+  int arr[7] = {1,8,10,12,7,4,3};
+  int t;
+  scanf("%d", &t);
+  for (int i = 0; i < 7; i++){
+    for (int j = i; j < 7; j++){
+      if ((arr[i]+arr[j]) == t){
+        printf("(%d,%d) ",arr[i],arr[j]);
+      }
+    }
+  }
+}
+
+```
 
 ### Question 07: \[10 points]
 Your task is to developing a program to manage and sort shirt details for a clothing store. The shirt details
@@ -107,3 +304,55 @@ You are given 2D array: ages (representing the age of each shirt) and prices (re
 shirt). Assume any number of shirts and its prices by yourself.
 Your expected output will show two different sorted list i.e., Sorted list in ascending order with respect to
 Age and Sorted list in descending order with respect to Price.
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+  int shirts;
+  printf("How many shirts?\n");
+  scanf("%d", &shirts);
+  int data[shirts][2];
+
+  for (int i = 0; i < shirts; i++){
+    printf("Shirt #%d\n", i);
+      printf("Input Age: ");
+      scanf("%d", &data[i][0]);
+      printf("Input Price: ");
+      scanf("%d", &data[i][1]);
+  }
+  
+  for (int i = 0; i < shirts; i++){
+    int min = i;
+    for (int j = i; j < shirts; j++){
+      if(data[min][0] > data[j][0]){
+        min = j;
+      }
+    }
+    int t = data[min][0];
+    data[min][0] = data[i][0];
+    data[i][0] = t;
+
+    for (int j = 0; j < shirts; j++){
+      if(data[i][0] == data[j][0]){
+        int max = j;
+        for (int k = j; k < shirts; k++){
+            if (data[max][1] < data[k][1]){
+              max = k;
+            }
+        }
+      int t = data[max][1];
+      data[max][1] = data[j][1];
+      data[j][1] = t;
+      }
+    }
+  }
+
+  for (int i = 0; i < shirts; i++){
+    printf("%d : %d\n", data[i][0], data[i][1]);
+
+  }
+}
+
+```
