@@ -149,9 +149,164 @@ of 1 indicates that the flight is available (not full) for that time slot, and 0
 4. The traveler is inquiring about flights on a specific day. Confirm if flights are available or not and provide the prices if available.
 
 ```c
+#include <stdio.h>
+
+void day(int n){
+  switch(n){
+    case 0:
+      printf("\nMon");
+      break;
+    case 1:
+      printf("\nTues");
+      break;
+    case 2:
+      printf("\nWed");
+      break;
+    case 3:
+      printf("\nThurs");
+      break;
+    case 4:
+      printf("\nFri");
+      break;
+  }
+}
+
+void PriceTime(char time, int price, int sched[5][4]){
+  if(time == 'm' || time == 'M'){
+    for (int i=0; i<5; i++){
+        if(sched[i][1] == price){
+          printf("For Price %d", price);
+          day(i);
+        }
+    }
+  } else if (time == 'e' || time == 'E'){
+    for (int i=0; i<5; i++){
+        if(sched[i][3] == price){
+          printf("For Price %d", price);
+          day(i);
+        }
+    }
+  }
+}
+
+void dayAnalysis(char time, int sched[5][4]){
+  int min = 0;
+  switch(time){
+    case 'm':
+    case 'M':
+      printf("Morning Flights: \n");
+      for (int i = 0; i < 5; i++){
+        if(sched[i][0] == 1){
+          day(i);
+          printf(": %d", sched[i][1]);
+          if (sched[min][1] > sched[i][1]){
+            min = i;
+          };
+        }
+      }
+      printf("\nThe Cheapest Flight Would be on ");
+      day(min);
+      printf(" - $%d\n", sched[min][1]);
+      break;
+    case 'e':
+    case 'E':
+      printf("Evening Flights: \n");
+      min = 1;
+      for (int i = 0; i < 5; i++){
+        if(sched[i][2] == 1){
+          day(i);
+          printf(": %d" ,sched[i][3]);
+          if (sched[min][3] > sched[i][3]){
+            min = i;
+          };
+        }
+      }
+      printf("\nThe Cheapest Flight Would be on ");
+      day(min);
+      printf(" - $%d\n", sched[min][3]);
+      break;
+
+  }
+
+}
+
+void printSched(char time,int sched[5][4], int d){
+  printf("Day  Availability  Price\n");
+  if (d == -1){
+    if (time == 'E' || time == 'e'){
+      for (int i = 0; i < 5; i++){
+        day(i);
+        printf("\t%d   \t   %d\n", sched[i][2], sched[i][3]);
+      }
+    } else if (time == 'm' || time == 'M'){
+      for (int i = 0; i < 5; i++){
+        day(i);
+        printf("\t%d   \t   %d\n", sched[i][0], sched[i][1]);
+      }
+    }
+  } else {
+    if (time == 'E' || time == 'e' || time == '-'){
+      for (int i = 0; i < 5; i++){
+        if((d-1) == i){
+        printf("Evening ----- \n");
+          day(i);
+          printf("\t%d   \t   %d\n", sched[i][2], sched[i][3]);
+        }
+      }
+    } 
+    if (time == 'm' || time == 'M' || time == '-'){
+      for (int i = 0; i < 5; i++){
+        if((d-1) == i){
+        printf("\nMorning ----- \n");
+          day(i);
+          printf("\t%d   \t   %d\n", sched[i][0], sched[i][1]);
+        }
+      }
+    }
+  
+  }
+}
+
+
+int main(){
+  int sched[5][4] = {
+  {1, 300, 0, -1},
+  {1, 320, 1, 310},
+  {0, -1, 1, 280},
+  {1, 380, 0, -1},
+  {1, 375, 1, 400}
+  };
+  char time;
+  int price, d;
+
+  printf("1.Flight Availability Analysis\n2.Morning Flight Preference\n3.Evening Flight Preference\n4.Specific Day Inquiry\n");
+  int choice;
+  scanf("%d", &choice);
+  switch (choice) {
+    case 1:
+      scanf(" %c", &time);
+      printSched(time, sched, -1);
+      scanf("%d", &price);
+      PriceTime(time, price, sched);
+      break;
+    case 2:
+      dayAnalysis('m', sched);
+      break;
+    case 3:
+      dayAnalysis('e', sched);
+      break;
+    case 4:
+      // A specific day
+      for(int i = 0; i < 5; i++){day(i);printf(" --- %d", i+1); }
+      printf("\nChoose Day: ");
+      scanf("%d", &d);
+      printSched('-', sched, d);
+      break;
+  }
+  }
 
 ```
-### Question 04 [20 points]
+### Question 04 \[20 points]
 You are given a maze represented by a 2D array. The maze consists of walls represented by 'W', open
 paths represented by 'O', the starting point represented by 'S', and the exit represented by 'E'. The
 objective is to find a path from the starting point to the exit.
