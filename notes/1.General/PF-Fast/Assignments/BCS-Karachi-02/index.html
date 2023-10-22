@@ -9,7 +9,7 @@
 <script defer src=https://redsteadz.github.io/glowing-computing-machine/js/code-title.ce4a43f09239a9efb48fee342e8ef2df.min.js></script>
 <script defer src=https://redsteadz.github.io/glowing-computing-machine/js/clipboard.2913da76d3cb21c5deaa4bae7da38c9f.min.js></script>
 <script defer src=https://redsteadz.github.io/glowing-computing-machine/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
-<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://redsteadz.github.io/glowing-computing-machine/",fetchData=Promise.all([fetch("https://redsteadz.github.io/glowing-computing-machine/indices/linkIndex.874ba9804eb6d48bc0513f5fc038bcc5.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://redsteadz.github.io/glowing-computing-machine/indices/contentIndex.1c7be64b70567e01d0bf6408659c6a56.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://redsteadz.github.io/glowing-computing-machine",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://redsteadz.github.io/glowing-computing-machine",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
+<script>const SEARCH_ENABLED=!1,LATEX_ENABLED=!0,PRODUCTION=!0,BASE_URL="https://redsteadz.github.io/glowing-computing-machine/",fetchData=Promise.all([fetch("https://redsteadz.github.io/glowing-computing-machine/indices/linkIndex.874ba9804eb6d48bc0513f5fc038bcc5.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://redsteadz.github.io/glowing-computing-machine/indices/contentIndex.6ceff77285fb19619ca06d471f7f6edd.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://redsteadz.github.io/glowing-computing-machine",!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://redsteadz.github.io/glowing-computing-machine",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}var i=document.getElementsByClassName("mermaid");i.length>0&&import("https://unpkg.com/mermaid@9/dist/mermaid.esm.min.mjs").then(e=>{e.default.init()})},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],macros:{'’':"'"},throwOnError:!1})}</script><script type=module>
     import { attachSPARouting } from "https:\/\/redsteadz.github.io\/glowing-computing-machine\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
     attachSPARouting(init, render)
   </script></head><script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD95KB4J"></script>
@@ -221,7 +221,317 @@ slot. The traveler is looking for the most convenient day and time slot where fl
 access to a 2D array representing the flight availability for different days and time slots.
 The 2D array below represents the availability of flights for different days of the week and two time slots:
 Morning and Evening. Each row corresponds to a day, and each column corresponds to a time slot. A value
-of 1 indicates that the flight is available (not full) for that time slot, and 0 indicates that the flight is full.</p><p><img src=https://redsteadz.github.io/glowing-computing-machine//notes/1.General/PF%20Fast/Assignments/attachments/Pasted%20image%2020231018204449.png width=auto alt></p><ol><li>Analyze the flight availability for each day and time slot. Determine the day and time slot where the traveler has the highest chance of booking a flight on the basis user preferences i.e. based on time and price.</li><li>The traveler is flexible with the day of travel but prefers the morning time slot. Determine the day(s) when a flight is available in the morning and suggest the best option for booking based on this preference.</li><li>Considering the traveler&rsquo;s preference for an evening flight, identify the day(s) when an evening flight is available and suggest the best option for booking based on this preference.</li><li>The traveler is inquiring about flights on a specific day. Confirm if flights are available or not and provide the prices if available.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c></code></pre></td></tr></table></div></div><a href=#question-04-20-points><h3 id=question-04-20-points><span class=hanchor arialabel=Anchor># </span>Question 04 [20 points]</h3></a><p>You are given a maze represented by a 2D array. The maze consists of walls represented by &lsquo;W&rsquo;, open
+of 1 indicates that the flight is available (not full) for that time slot, and 0 indicates that the flight is full.</p><p><img src=https://redsteadz.github.io/glowing-computing-machine//notes/1.General/PF%20Fast/Assignments/attachments/Pasted%20image%2020231018204449.png width=auto alt></p><ol><li>Analyze the flight availability for each day and time slot. Determine the day and time slot where the traveler has the highest chance of booking a flight on the basis user preferences i.e. based on time and price.</li><li>The traveler is flexible with the day of travel but prefers the morning time slot. Determine the day(s) when a flight is available in the morning and suggest the best option for booking based on this preference.</li><li>Considering the traveler&rsquo;s preference for an evening flight, identify the day(s) when an evening flight is available and suggest the best option for booking based on this preference.</li><li>The traveler is inquiring about flights on a specific day. Confirm if flights are available or not and provide the prices if available.</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span><span class=lnt>150
+</span><span class=lnt>151
+</span><span class=lnt>152
+</span><span class=lnt>153
+</span><span class=lnt>154
+</span><span class=lnt>155
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=line><span class=cl><span class=cp>#include</span> <span class=cpf>&lt;stdio.h&gt;</span><span class=cp>
+</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl><span class=kt>void</span> <span class=nf>day</span><span class=p>(</span><span class=kt>int</span> <span class=n>n</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>  <span class=k>switch</span><span class=p>(</span><span class=n>n</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=mi>0</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>Mon&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=mi>1</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>Tues&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=mi>2</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>Wed&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=mi>3</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>Thurs&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=mi>4</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>Fri&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>void</span> <span class=nf>PriceTime</span><span class=p>(</span><span class=kt>char</span> <span class=n>time</span><span class=p>,</span> <span class=kt>int</span> <span class=n>price</span><span class=p>,</span> <span class=kt>int</span> <span class=n>sched</span><span class=p>[</span><span class=mi>5</span><span class=p>][</span><span class=mi>4</span><span class=p>]){</span>
+</span></span><span class=line><span class=cl>  <span class=k>if</span><span class=p>(</span><span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;m&#39;</span> <span class=o>||</span> <span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;M&#39;</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;</span><span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=p>(</span><span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>1</span><span class=p>]</span> <span class=o>==</span> <span class=n>price</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>          <span class=n>printf</span><span class=p>(</span><span class=s>&#34;For Price %d&#34;</span><span class=p>,</span> <span class=n>price</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=n>day</span><span class=p>(</span><span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;e&#39;</span> <span class=o>||</span> <span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;E&#39;</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;</span><span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=p>(</span><span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>3</span><span class=p>]</span> <span class=o>==</span> <span class=n>price</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>          <span class=n>printf</span><span class=p>(</span><span class=s>&#34;For Price %d&#34;</span><span class=p>,</span> <span class=n>price</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=n>day</span><span class=p>(</span><span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>void</span> <span class=nf>dayAnalysis</span><span class=p>(</span><span class=kt>char</span> <span class=n>time</span><span class=p>,</span> <span class=kt>int</span> <span class=n>sched</span><span class=p>[</span><span class=mi>5</span><span class=p>][</span><span class=mi>4</span><span class=p>]){</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>min</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=k>switch</span><span class=p>(</span><span class=n>time</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=sc>&#39;m&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=sc>&#39;M&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34;Morning Flights: </span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=p>(</span><span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>0</span><span class=p>]</span> <span class=o>==</span> <span class=mi>1</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>          <span class=n>day</span><span class=p>(</span><span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=n>printf</span><span class=p>(</span><span class=s>&#34;: %d&#34;</span><span class=p>,</span> <span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>1</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>          <span class=k>if</span> <span class=p>(</span><span class=n>sched</span><span class=p>[</span><span class=n>min</span><span class=p>][</span><span class=mi>1</span><span class=p>]</span> <span class=o>&gt;</span> <span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>1</span><span class=p>]){</span>
+</span></span><span class=line><span class=cl>            <span class=n>min</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>          <span class=p>};</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>The Cheapest Flight Would be on &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>day</span><span class=p>(</span><span class=n>min</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34; - $%d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>sched</span><span class=p>[</span><span class=n>min</span><span class=p>][</span><span class=mi>1</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>      <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=sc>&#39;e&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=sc>&#39;E&#39;</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34;Evening Flights: </span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>min</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>      <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=p>(</span><span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>2</span><span class=p>]</span> <span class=o>==</span> <span class=mi>1</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>          <span class=n>day</span><span class=p>(</span><span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=n>printf</span><span class=p>(</span><span class=s>&#34;: %d&#34;</span> <span class=p>,</span><span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>3</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>          <span class=k>if</span> <span class=p>(</span><span class=n>sched</span><span class=p>[</span><span class=n>min</span><span class=p>][</span><span class=mi>3</span><span class=p>]</span> <span class=o>&gt;</span> <span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>3</span><span class=p>]){</span>
+</span></span><span class=line><span class=cl>            <span class=n>min</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>          <span class=p>};</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>The Cheapest Flight Would be on &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>day</span><span class=p>(</span><span class=n>min</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34; - $%d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>sched</span><span class=p>[</span><span class=n>min</span><span class=p>][</span><span class=mi>3</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>      <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>void</span> <span class=nf>printSched</span><span class=p>(</span><span class=kt>char</span> <span class=n>time</span><span class=p>,</span><span class=kt>int</span> <span class=n>sched</span><span class=p>[</span><span class=mi>5</span><span class=p>][</span><span class=mi>4</span><span class=p>],</span> <span class=kt>int</span> <span class=n>d</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>  <span class=n>printf</span><span class=p>(</span><span class=s>&#34;Day  Availability  Price</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=p>(</span><span class=n>d</span> <span class=o>==</span> <span class=o>-</span><span class=mi>1</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;E&#39;</span> <span class=o>||</span> <span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;e&#39;</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>      <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>day</span><span class=p>(</span><span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\t</span><span class=s>%d   </span><span class=se>\t</span><span class=s>   %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>2</span><span class=p>],</span> <span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>3</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;m&#39;</span> <span class=o>||</span> <span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;M&#39;</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>      <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>day</span><span class=p>(</span><span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\t</span><span class=s>%d   </span><span class=se>\t</span><span class=s>   %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>0</span><span class=p>],</span> <span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>1</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;E&#39;</span> <span class=o>||</span> <span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;e&#39;</span> <span class=o>||</span> <span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;-&#39;</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>      <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=p>((</span><span class=n>d</span><span class=o>-</span><span class=mi>1</span><span class=p>)</span> <span class=o>==</span> <span class=n>i</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>printf</span><span class=p>(</span><span class=s>&#34;Evening ----- </span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=n>day</span><span class=p>(</span><span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\t</span><span class=s>%d   </span><span class=se>\t</span><span class=s>   %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>2</span><span class=p>],</span> <span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>3</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> 
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;m&#39;</span> <span class=o>||</span> <span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;M&#39;</span> <span class=o>||</span> <span class=n>time</span> <span class=o>==</span> <span class=sc>&#39;-&#39;</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>      <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=k>if</span><span class=p>((</span><span class=n>d</span><span class=o>-</span><span class=mi>1</span><span class=p>)</span> <span class=o>==</span> <span class=n>i</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>        <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>Morning ----- </span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=n>day</span><span class=p>(</span><span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>          <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\t</span><span class=s>%d   </span><span class=se>\t</span><span class=s>   %d</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>,</span> <span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>0</span><span class=p>],</span> <span class=n>sched</span><span class=p>[</span><span class=n>i</span><span class=p>][</span><span class=mi>1</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>      <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>sched</span><span class=p>[</span><span class=mi>5</span><span class=p>][</span><span class=mi>4</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>300</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>320</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>310</span><span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span><span class=mi>0</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>280</span><span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>380</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>375</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>400</span><span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>};</span>
+</span></span><span class=line><span class=cl>  <span class=kt>char</span> <span class=n>time</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>price</span><span class=p>,</span> <span class=n>d</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>printf</span><span class=p>(</span><span class=s>&#34;1.Flight Availability Analysis</span><span class=se>\n</span><span class=s>2.Morning Flight Preference</span><span class=se>\n</span><span class=s>3.Evening Flight Preference</span><span class=se>\n</span><span class=s>4.Specific Day Inquiry</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kt>int</span> <span class=n>choice</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=n>scanf</span><span class=p>(</span><span class=s>&#34;%d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>choice</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=k>switch</span> <span class=p>(</span><span class=n>choice</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=mi>1</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=n>scanf</span><span class=p>(</span><span class=s>&#34; %c&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>time</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>printSched</span><span class=p>(</span><span class=n>time</span><span class=p>,</span> <span class=n>sched</span><span class=p>,</span> <span class=o>-</span><span class=mi>1</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>scanf</span><span class=p>(</span><span class=s>&#34;%d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>price</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>PriceTime</span><span class=p>(</span><span class=n>time</span><span class=p>,</span> <span class=n>price</span><span class=p>,</span> <span class=n>sched</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=mi>2</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=n>dayAnalysis</span><span class=p>(</span><span class=sc>&#39;m&#39;</span><span class=p>,</span> <span class=n>sched</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=mi>3</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=n>dayAnalysis</span><span class=p>(</span><span class=sc>&#39;e&#39;</span><span class=p>,</span> <span class=n>sched</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>case</span> <span class=mi>4</span><span class=o>:</span>
+</span></span><span class=line><span class=cl>      <span class=c1>// A specific day
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>5</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span><span class=n>day</span><span class=p>(</span><span class=n>i</span><span class=p>);</span><span class=n>printf</span><span class=p>(</span><span class=s>&#34; --- %d&#34;</span><span class=p>,</span> <span class=n>i</span><span class=o>+</span><span class=mi>1</span><span class=p>);</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>      <span class=n>printf</span><span class=p>(</span><span class=s>&#34;</span><span class=se>\n</span><span class=s>Choose Day: &#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>scanf</span><span class=p>(</span><span class=s>&#34;%d&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>d</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=n>printSched</span><span class=p>(</span><span class=sc>&#39;-&#39;</span><span class=p>,</span> <span class=n>sched</span><span class=p>,</span> <span class=n>d</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>      <span class=k>break</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#question-04-20-points><h3 id=question-04-20-points><span class=hanchor arialabel=Anchor># </span>Question 04 [20 points]</h3></a><p>You are given a maze represented by a 2D array. The maze consists of walls represented by &lsquo;W&rsquo;, open
 paths represented by &lsquo;O&rsquo;, the starting point represented by &lsquo;S&rsquo;, and the exit represented by &lsquo;E&rsquo;. The
 objective is to find a path from the starting point to the exit.
 char maze[N][M] = {
