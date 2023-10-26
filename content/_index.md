@@ -56,7 +56,7 @@ enableToc: false
 - **PF Fast**
 	- **Assignments**
 		- [[notes/1.General/PF Fast/Assignments/BCS - Karachi 01|BCS - Karachi 01]]
-		- [[BCS - Karachi 02]]
+		- [[notes/1.General/PF Fast/Assignments/BCS - Karachi 02|BCS - Karachi 02]]
 	- **Labs**
 		- [[notes/1.General/PF Fast/Labs/EE - 1A LAB03|EE - 1A LAB03]]
 		- [[notes/1.General/PF Fast/Labs/EE - 1A LAB02|EE - 1A LAB02]]

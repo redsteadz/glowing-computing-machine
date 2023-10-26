@@ -20,21 +20,23 @@ Write a C program to perform the following tasks:
 - Number of centuries (innings with a score of 100 or more)
 - Number of half-centuries (innings with a score of 50-99)
 Your program should display the statistics for each batsman individually.
+
 ```c
 #include <stdio.h>
 
 int main (){
   int bt, in;
+  // Inputs for batters and number of innings they played
   scanf("%d%d", &bt, &in);
-  
+
+  // The performance array to store the information
   int perf[bt][in];
 
+  // It takes the input values
   for (int i=0; i < bt; i++){
-
     for(int j=0; j < in; j++){
       printf("For the Batsman %d, %d inning: ", i, j);
       scanf("%d",&perf[i][j]);
-
     }
   }
 
