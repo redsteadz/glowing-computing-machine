@@ -64,3 +64,68 @@ int main(){
 }
 ```
 
+## More Efficient version would be
+
+```cpp
+void swap(vector <int>& arr, int a, int b){
+  int t = arr[a];
+  arr[a] = arr[b];
+  arr[b] = t;
+}
+
+int partition(vector<int>& arr, int l, int h) {
+    int pivot = arr[h];  // Choose the pivot element (you don't need the 'i' parameter)
+    int x = l - 1;       // Initialize x to be one less than the low index
+
+    for (int y = l; y <= h - 1; y++) {
+        if (arr[y] > pivot) {
+            x++;  // Increment x
+            swap(arr, x, y);  // Swap arr[x] and arr[y]
+        }
+    }
+
+    swap(arr, x + 1, h);  // Swap the pivot element with arr[x+1]
+    
+    return x + 1;  // Return the updated position of the pivot
+}
+
+int quickSort(vector<int>& arr, int l, int h, int k) {
+    if (l <= h) {
+        int piv = partition(arr, l, h);
+
+        quickSortt(arr, l, piv - 1, k);
+		quickSelect(arr, piv + 1, h, k);
+    }
+    return 0; // Handle the case when k is out of range
+}
+```
+
+
+This new and \*improved idea is basically finding the values larger than the pivot and swapping them with the iterator x which changes position every time a new relative maxima is found, at the end, the final position of the maxima + 1 will be where the pivot is placed, 
+Then the same normal quickSort algorithm is observed
+This removes the unnecessary two loops that must've ran before and now can be done using a single loop
+
+Another change that could be implemented in this case would be to change the quickSort function making it as such
+
+```cpp
+int quickSelect(vector<int>& arr, int k) {
+    int l = 0;
+    int h = arr.size() - 1;
+
+    while (l <= h) {
+        int piv = partition(arr, l, h);
+
+        if (k < piv) {
+            h = piv - 1;
+        } else if (k > piv) {
+            l = piv + 1;
+        } else {
+            return arr[piv];
+        }
+    }
+    
+    return -1; // Handle the case when k is out of range
+}
+```
+
+Although quickSort is a neat method to work with, It is still slower for larger arrays and becomes inefficient, That's why we can now look at 
